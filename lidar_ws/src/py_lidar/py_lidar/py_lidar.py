@@ -40,7 +40,7 @@ class LidarPublisher(Node):
 
             self.msg.header.stamp.sec = int(self.scan.stamp // 1e9)      # int32    # Indicates a specific point in time [s]
             self.msg.header.stamp.nanosec = int(self.scan.stamp % 1e9)   # uint32   # Indicates a specific point in time [ns]
-            self.msg.header.frame_id = "laser_frame"                     # string   # Transform frame with which this data is associated
+            self.msg.header.frame_id = "map"                             # string   # Transform frame with which this data is associated
             self.msg.angle_min = self.scan.config.min_angle              # float32  # Start angle of the scan [rad]
             self.msg.angle_max = self.scan.config.max_angle              # float32  # End angle of the scan [rad]
             self.msg.angle_increment = self.scan.config.angle_increment  # float32  # Angular distance between measurements [rad]
@@ -49,14 +49,11 @@ class LidarPublisher(Node):
             self.msg.range_min = self.scan.config.min_range              # float32  # Minimum range value [m]
             self.msg.range_max = self.scan.config.max_range              # float32  # Maximum range value [m]
 
-            self.msg.ranges = []       # float32[]  # Range data [m]
-            self.msg.intensities = []  # float32[]  # Intensity data
-
-            for point in self.scan.points:
-                self.msg.ranges.append(point.range)
+            self.msg.ranges = [point.range for point in self.scan.points][::-1]  # float32[]  # Range data [m]
+            self.msg.intensities = []                                            # float32[]  # Intensity data
         
             self.publisher_.publish(self.msg)
-            self.get_logger().info('Publishing lidar_data topic')
+            self.get_logger().info('')
 
 
     def __del__(self):
