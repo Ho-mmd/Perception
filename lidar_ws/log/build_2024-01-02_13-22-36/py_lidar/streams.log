@@ -1,0 +1,17 @@
+[0.631s] Invoking command in '/home/ha/Desktop/ADS-Sense/lidar_ws/build/py_lidar': PYTHONPATH=/home/ha/Desktop/ADS-Sense/lidar_ws/build/py_lidar/prefix_override:/home/ha/Desktop/ADS-Sense/lidar_ws/install/py_lidar/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/ha/Desktop/ADS-Sense/lidar_ws/build/py_lidar/build --no-deps install_data
+[0.768s] running develop
+[0.849s] running egg_info
+[0.849s] writing py_lidar.egg-info/PKG-INFO
+[0.849s] writing dependency_links to py_lidar.egg-info/dependency_links.txt
+[0.849s] writing entry points to py_lidar.egg-info/entry_points.txt
+[0.849s] writing requirements to py_lidar.egg-info/requires.txt
+[0.849s] writing top-level names to py_lidar.egg-info/top_level.txt
+[0.869s] reading manifest file 'py_lidar.egg-info/SOURCES.txt'
+[0.870s] writing manifest file 'py_lidar.egg-info/SOURCES.txt'
+[0.890s] running build_ext
+[0.890s] Creating /home/ha/Desktop/ADS-Sense/lidar_ws/install/py_lidar/lib/python3.8/site-packages/py-lidar.egg-link (link to .)
+[0.891s] Installing py_lidar script to /home/ha/Desktop/ADS-Sense/lidar_ws/install/py_lidar/lib/py_lidar
+[0.891s] 
+[0.891s] Installed /home/ha/Desktop/ADS-Sense/lidar_ws/build/py_lidar
+[0.891s] running install_data
+[0.909s] Invoked command in '/home/ha/Desktop/ADS-Sense/lidar_ws/build/py_lidar' returned '0': PYTHONPATH=/home/ha/Desktop/ADS-Sense/lidar_ws/build/py_lidar/prefix_override:/home/ha/Desktop/ADS-Sense/lidar_ws/install/py_lidar/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/ha/Desktop/ADS-Sense/lidar_ws/build/py_lidar/build --no-deps install_data
