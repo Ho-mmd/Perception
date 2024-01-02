@@ -10,7 +10,7 @@ class LidarPublisher(Node):
     def __init__(self):
         super().__init__('lidar_pub_node')
         self.publisher_ = self.create_publisher(LaserScan, 'lidar_data', 10)
-        self.timer = self.create_timer(0.1, self.callback)  # seconds
+        self.timer = self.create_timer(0.2, self.callback)  # seconds
 
         ydlidar.os_init()
 
