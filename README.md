@@ -8,4 +8,8 @@ This project will cover the following content.
   
 With ROS2, RViz2, Gazebo, PyTorch, SLAM, Matlab ...
 ## LIDAR code language performance
-python = 8.4fps (average)
+python = CPU 2.34%
+
+C++ = CPU
+
+(python = 8.4fps)
