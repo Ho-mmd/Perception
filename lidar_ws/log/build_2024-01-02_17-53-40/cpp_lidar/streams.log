@@ -1,0 +1,42 @@
+[0.265s] Invoking command in '/home/ha/Desktop/ADS-Sense/lidar_ws/build/cpp_lidar': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ha/Desktop/gcamp_ros2_ws/install/py_topic_pkg:/opt/ros/foxy /usr/bin/cmake --build /home/ha/Desktop/ADS-Sense/lidar_ws/build/cpp_lidar -- -j8 -l8
+[0.291s] [35m[1mScanning dependencies of target cpp_lidar[0m
+[0.307s] [ 50%] [32mBuilding CXX object CMakeFiles/cpp_lidar.dir/src/cpp_lidar.cpp.o[0m
+[1.091s] [01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:[m[K In constructor ‘[01m[KLidarPublisher::LidarPublisher()[m[K’:
+[1.091s] [01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:15:9:[m[K [01;31m[Kerror: [m[Kunable to find numeric literal operator ‘[01m[Koperator""ms[m[K’
+[1.091s]    15 |         [01;31m[K200ms[m[K, std::bind(&LidarPublisher::callback, this)
+[1.091s]       |         [01;31m[K^~~~~[m[K
+[1.096s] [01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:[m[K In member function ‘[01m[Kvoid LidarPublisher::callback()[m[K’:
+[1.096s] [01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:23:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kmessage[m[K’ was not declared in this scope
+[1.096s]    23 |       [01;31m[Kmessage[m[K.data = ???;
+[1.096s]       |       [01;31m[K^~~~~~~[m[K
+[1.096s] [01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:23:22:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K?[m[K’ token
+[1.096s]    23 |       message.data = [01;31m[K?[m[K??;
+[1.096s]       |                      [01;31m[K^[m[K
+[1.096s] [01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:23:23:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K?[m[K’ token
+[1.096s]    23 |       message.data = ?[01;31m[K?[m[K?;
+[1.097s]       |                       [01;31m[K^[m[K
+[1.097s] [01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:23:24:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K?[m[K’ token
+[1.097s]    23 |       message.data = ??[01;31m[K?[m[K;
+[1.097s]       |                        [01;31m[K^[m[K
+[1.097s] [01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:23:25:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K;[m[K’ token
+[1.097s]    23 |       message.data = ???[01;31m[K;[m[K
+[1.097s]       |                         [01;31m[K^[m[K
+[1.097s] [01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:23:25:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K:[m[K’ before ‘[01m[K;[m[K’ token
+[1.097s]    23 |       message.data = ???[01;31m[K;[m[K
+[1.097s]       |                         [01;31m[K^[m[K
+[1.097s]       |                         [32m[K:[m[K
+[1.097s] [01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:23:25:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K;[m[K’ token
+[1.097s] [01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:23:25:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K:[m[K’ before ‘[01m[K;[m[K’ token
+[1.097s]    23 |       message.data = ???[01;31m[K;[m[K
+[1.097s]       |                         [01;31m[K^[m[K
+[1.097s]       |                         [32m[K:[m[K
+[1.097s] [01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:23:25:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K;[m[K’ token
+[1.097s] [01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:23:25:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K:[m[K’ before ‘[01m[K;[m[K’ token
+[1.097s]    23 |       message.data = ???[01;31m[K;[m[K
+[1.097s]       |                         [01;31m[K^[m[K
+[1.097s]       |                         [32m[K:[m[K
+[1.097s] [01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:23:25:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K;[m[K’ token
+[1.636s] make[2]: *** [CMakeFiles/cpp_lidar.dir/build.make:63: CMakeFiles/cpp_lidar.dir/src/cpp_lidar.cpp.o] 오류 1
+[1.636s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/cpp_lidar.dir/all] 오류 2
+[1.636s] make: *** [Makefile:141: all] 오류 2
+[1.639s] Invoked command in '/home/ha/Desktop/ADS-Sense/lidar_ws/build/cpp_lidar' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ha/Desktop/gcamp_ros2_ws/install/py_topic_pkg:/opt/ros/foxy /usr/bin/cmake --build /home/ha/Desktop/ADS-Sense/lidar_ws/build/cpp_lidar -- -j8 -l8

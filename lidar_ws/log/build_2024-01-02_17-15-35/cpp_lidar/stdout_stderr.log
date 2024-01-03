@@ -1,0 +1,25 @@
+[35m[1mScanning dependencies of target cpp_lidar[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/cpp_lidar.dir/src/cpp_lidar.cpp.o[0m
+[01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:66:1:[m[K [01;35m[Kwarning: [m[K"/*" within comment [[01;35m[K-Wcomment[m[K]
+   66 | /* This example creates a subclass of Node and uses std::bind() to register a
+      |  
+[100%] [32m[1mLinking CXX executable cpp_lidar[0m
+[100%] Built target cpp_lidar
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/ha/Desktop/ADS-Sense/lidar_ws/install/cpp_lidar/lib/cpp_lidar/cpp_lidar
+-- Up-to-date symlink: /home/ha/Desktop/ADS-Sense/lidar_ws/install/cpp_lidar/share/ament_index/resource_index/package_run_dependencies/cpp_lidar
+-- Up-to-date symlink: /home/ha/Desktop/ADS-Sense/lidar_ws/install/cpp_lidar/share/ament_index/resource_index/parent_prefix_path/cpp_lidar
+-- Up-to-date symlink: /home/ha/Desktop/ADS-Sense/lidar_ws/install/cpp_lidar/share/cpp_lidar/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/ha/Desktop/ADS-Sense/lidar_ws/install/cpp_lidar/share/cpp_lidar/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/ha/Desktop/ADS-Sense/lidar_ws/install/cpp_lidar/share/cpp_lidar/environment/path.sh
+-- Up-to-date symlink: /home/ha/Desktop/ADS-Sense/lidar_ws/install/cpp_lidar/share/cpp_lidar/environment/path.dsv
+-- Up-to-date symlink: /home/ha/Desktop/ADS-Sense/lidar_ws/install/cpp_lidar/share/cpp_lidar/local_setup.bash
+-- Up-to-date symlink: /home/ha/Desktop/ADS-Sense/lidar_ws/install/cpp_lidar/share/cpp_lidar/local_setup.sh
+-- Up-to-date symlink: /home/ha/Desktop/ADS-Sense/lidar_ws/install/cpp_lidar/share/cpp_lidar/local_setup.zsh
+-- Up-to-date symlink: /home/ha/Desktop/ADS-Sense/lidar_ws/install/cpp_lidar/share/cpp_lidar/local_setup.dsv
+-- Symlinking: /home/ha/Desktop/ADS-Sense/lidar_ws/install/cpp_lidar/share/cpp_lidar/package.dsv
+-- Up-to-date symlink: /home/ha/Desktop/ADS-Sense/lidar_ws/install/cpp_lidar/share/ament_index/resource_index/packages/cpp_lidar
+-- Up-to-date symlink: /home/ha/Desktop/ADS-Sense/lidar_ws/install/cpp_lidar/share/cpp_lidar/cmake/cpp_lidarConfig.cmake
+-- Up-to-date symlink: /home/ha/Desktop/ADS-Sense/lidar_ws/install/cpp_lidar/share/cpp_lidar/cmake/cpp_lidarConfig-version.cmake
+-- Up-to-date symlink: /home/ha/Desktop/ADS-Sense/lidar_ws/install/cpp_lidar/share/cpp_lidar/package.xml

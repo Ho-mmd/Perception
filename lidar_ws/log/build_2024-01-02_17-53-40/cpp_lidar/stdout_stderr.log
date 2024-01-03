@@ -1,0 +1,40 @@
+[35m[1mScanning dependencies of target cpp_lidar[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/cpp_lidar.dir/src/cpp_lidar.cpp.o[0m
+[01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:[m[K In constructor ‘[01m[KLidarPublisher::LidarPublisher()[m[K’:
+[01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:15:9:[m[K [01;31m[Kerror: [m[Kunable to find numeric literal operator ‘[01m[Koperator""ms[m[K’
+   15 |         [01;31m[K200ms[m[K, std::bind(&LidarPublisher::callback, this)
+      |         [01;31m[K^~~~~[m[K
+[01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:[m[K In member function ‘[01m[Kvoid LidarPublisher::callback()[m[K’:
+[01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:23:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kmessage[m[K’ was not declared in this scope
+   23 |       [01;31m[Kmessage[m[K.data = ???;
+      |       [01;31m[K^~~~~~~[m[K
+[01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:23:22:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K?[m[K’ token
+   23 |       message.data = [01;31m[K?[m[K??;
+      |                      [01;31m[K^[m[K
+[01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:23:23:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K?[m[K’ token
+   23 |       message.data = ?[01;31m[K?[m[K?;
+      |                       [01;31m[K^[m[K
+[01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:23:24:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K?[m[K’ token
+   23 |       message.data = ??[01;31m[K?[m[K;
+      |                        [01;31m[K^[m[K
+[01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:23:25:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K;[m[K’ token
+   23 |       message.data = ???[01;31m[K;[m[K
+      |                         [01;31m[K^[m[K
+[01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:23:25:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K:[m[K’ before ‘[01m[K;[m[K’ token
+   23 |       message.data = ???[01;31m[K;[m[K
+      |                         [01;31m[K^[m[K
+      |                         [32m[K:[m[K
+[01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:23:25:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K;[m[K’ token
+[01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:23:25:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K:[m[K’ before ‘[01m[K;[m[K’ token
+   23 |       message.data = ???[01;31m[K;[m[K
+      |                         [01;31m[K^[m[K
+      |                         [32m[K:[m[K
+[01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:23:25:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K;[m[K’ token
+[01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:23:25:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K:[m[K’ before ‘[01m[K;[m[K’ token
+   23 |       message.data = ???[01;31m[K;[m[K
+      |                         [01;31m[K^[m[K
+      |                         [32m[K:[m[K
+[01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:23:25:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K;[m[K’ token
+make[2]: *** [CMakeFiles/cpp_lidar.dir/build.make:63: CMakeFiles/cpp_lidar.dir/src/cpp_lidar.cpp.o] 오류 1
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/cpp_lidar.dir/all] 오류 2
+make: *** [Makefile:141: all] 오류 2
