@@ -10,7 +10,7 @@ class LidarPublisher(Node):
     def __init__(self):
         super().__init__('lidar_pub_node')
         self.publisher_ = self.create_publisher(LaserScan, 'lidar_data', 10)
-        self.timer_ = self.create_timer(0.01, self.callback)  # seconds
+        self.timer_ = self.create_timer(0.01, self.callback)  # [s]
 
         ydlidar.os_init()
 
@@ -28,29 +28,31 @@ class LidarPublisher(Node):
         self.laser.setlidaropt(ydlidar.LidarPropMinRange, 0.12)
         self.laser.setlidaropt(ydlidar.LidarPropIntenstiy, False)
 
-        self.scan = ydlidar.LaserScan()
-
         self.laser.initialize()
         self.laser.turnOn()
+
+        self.scan = ydlidar.LaserScan()
+        self.msg = LaserScan()
+
+        if self.laser.doProcessSimple(self.scan):
+            self.msg.header.frame_id = "map"                               # string     # Transform frame with which this data is associated
+            self.msg.angle_min = self.scan.config.min_angle                # float32    # Start angle of the scan [rad]
+            self.msg.angle_max = self.scan.config.max_angle                # float32    # End angle of the scan [rad]
+            self.msg.range_min = self.scan.config.min_range                # float32    # Minimum range value [m]
+            self.msg.range_max = self.scan.config.max_range                # float32    # Maximum range value [m]
+            self.msg.intensities = []                                      # float32[]  # Intensity data
 
 
     def callback(self):
         if self.laser.doProcessSimple(self.scan):
-            self.msg = LaserScan()
+            self.msg.header.stamp.sec = int(self.scan.stamp // 1e9)        # int32      # Indicates a specific point in time [s]
+            self.msg.header.stamp.nanosec = int(self.scan.stamp % 1e9)     # uint32     # Indicates a specific point in time [ns]
+            self.msg.angle_increment = self.scan.config.angle_increment    # float32    # Angular distance between measurements [rad]
+            self.msg.time_increment = self.scan.config.time_increment      # float32    # Time between measurements [s]
+            self.msg.scan_time = self.scan.config.scan_time                # float32    # Time between scans [s]
 
-            self.msg.header.stamp.sec = int(self.scan.stamp // 1e9)      # int32    # Indicates a specific point in time [s]
-            self.msg.header.stamp.nanosec = int(self.scan.stamp % 1e9)   # uint32   # Indicates a specific point in time [ns]
-            self.msg.header.frame_id = "map"                             # string   # Transform frame with which this data is associated
-            self.msg.angle_min = self.scan.config.min_angle              # float32  # Start angle of the scan [rad]
-            self.msg.angle_max = self.scan.config.max_angle              # float32  # End angle of the scan [rad]
-            self.msg.angle_increment = self.scan.config.angle_increment  # float32  # Angular distance between measurements [rad]
-            self.msg.time_increment = self.scan.config.time_increment    # float32  # Time between measurements [s]
-            self.msg.scan_time = self.scan.config.scan_time              # float32  # Time between scans [s]
-            self.msg.range_min = self.scan.config.min_range              # float32  # Minimum range value [m]
-            self.msg.range_max = self.scan.config.max_range              # float32  # Maximum range value [m]
-
-            self.msg.ranges = [point.range for point in self.scan.points][::-1]  # float32[]  # Range data [m]
-            self.msg.intensities = []                                            # float32[]  # Intensity data
+            self.msg.ranges = [point.range for point in self.scan.points]  # float32[]  # Range data [m]
+            self.msg.ranges.reverse()
         
             self.publisher_.publish(self.msg)
             self.get_logger().info('')

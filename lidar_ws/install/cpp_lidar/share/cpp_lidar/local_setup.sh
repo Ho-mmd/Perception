@@ -1,1 +1,0 @@
-/home/ha/Desktop/ADS-Sense/lidar_ws/build/cpp_lidar/ament_cmake_environment_hooks/local_setup.sh

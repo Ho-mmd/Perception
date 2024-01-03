@@ -1,3 +1,0 @@
-[01m[K/home/ha/Desktop/ADS-Sense/lidar_ws/src/cpp_lidar/src/cpp_lidar.cpp:66:1:[m[K [01;35m[Kwarning: [m[K"/*" within comment [[01;35m[K-Wcomment[m[K]
-   66 | /* This example creates a subclass of Node and uses std::bind() to register a
-      |  
