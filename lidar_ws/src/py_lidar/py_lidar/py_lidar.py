@@ -10,7 +10,7 @@ class LidarPublisher(Node):
     def __init__(self):
         super().__init__('lidar_pub_node')
         self.publisher_ = self.create_publisher(LaserScan, 'lidar_data', 10)
-        self.timer_ = self.create_timer(0.01, self.callback)  # [s]
+        self.timer_ = self.create_timer(0.2, self.callback)  # [s]
 
         ydlidar.os_init()
 
@@ -55,7 +55,7 @@ class LidarPublisher(Node):
             self.msg.ranges.reverse()
         
             self.publisher_.publish(self.msg)
-            self.get_logger().info('')
+            # self.get_logger().info('')
 
 
     def __del__(self):

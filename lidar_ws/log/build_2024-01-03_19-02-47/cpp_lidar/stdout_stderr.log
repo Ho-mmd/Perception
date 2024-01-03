@@ -1,0 +1,37 @@
+-- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found rclcpp: 2.4.3 (/opt/ros/foxy/share/rclcpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ha/Desktop/ADS-Perception/lidar_ws/build/cpp_lidar
+[ 50%] [32m[1mLinking CXX executable cpp_lidar[0m
+/usr/bin/ld: CMakeFiles/cpp_lidar.dir/src/cpp_lidar.cpp.o: in function `LidarPublisher::LidarPublisher()':
+cpp_lidar.cpp:(.text._ZN14LidarPublisherC2Ev[_ZN14LidarPublisherC5Ev]+0x146): undefined reference to `CYdLidar::CYdLidar()'
+/usr/bin/ld: cpp_lidar.cpp:(.text._ZN14LidarPublisherC2Ev[_ZN14LidarPublisherC5Ev]+0x38c): undefined reference to `CYdLidar::setlidaropt(int, void const*, int)'
+/usr/bin/ld: cpp_lidar.cpp:(.text._ZN14LidarPublisherC2Ev[_ZN14LidarPublisherC5Ev]+0x3ca): undefined reference to `CYdLidar::setlidaropt(int, void const*, int)'
+/usr/bin/ld: cpp_lidar.cpp:(.text._ZN14LidarPublisherC2Ev[_ZN14LidarPublisherC5Ev]+0x408): undefined reference to `CYdLidar::setlidaropt(int, void const*, int)'
+/usr/bin/ld: cpp_lidar.cpp:(.text._ZN14LidarPublisherC2Ev[_ZN14LidarPublisherC5Ev]+0x446): undefined reference to `CYdLidar::setlidaropt(int, void const*, int)'
+/usr/bin/ld: cpp_lidar.cpp:(.text._ZN14LidarPublisherC2Ev[_ZN14LidarPublisherC5Ev]+0x48a): undefined reference to `CYdLidar::setlidaropt(int, void const*, int)'
+/usr/bin/ld: CMakeFiles/cpp_lidar.dir/src/cpp_lidar.cpp.o:cpp_lidar.cpp:(.text._ZN14LidarPublisherC2Ev[_ZN14LidarPublisherC5Ev]+0x4c8): more undefined references to `CYdLidar::setlidaropt(int, void const*, int)' follow
+/usr/bin/ld: CMakeFiles/cpp_lidar.dir/src/cpp_lidar.cpp.o: in function `LidarPublisher::LidarPublisher()':
+cpp_lidar.cpp:(.text._ZN14LidarPublisherC2Ev[_ZN14LidarPublisherC5Ev]+0x663): undefined reference to `CYdLidar::initialize()'
+/usr/bin/ld: cpp_lidar.cpp:(.text._ZN14LidarPublisherC2Ev[_ZN14LidarPublisherC5Ev]+0x678): undefined reference to `CYdLidar::turnOn()'
+/usr/bin/ld: cpp_lidar.cpp:(.text._ZN14LidarPublisherC2Ev[_ZN14LidarPublisherC5Ev]+0x69e): undefined reference to `CYdLidar::doProcessSimple(LaserScan&)'
+/usr/bin/ld: cpp_lidar.cpp:(.text._ZN14LidarPublisherC2Ev[_ZN14LidarPublisherC5Ev]+0x850): undefined reference to `CYdLidar::~CYdLidar()'
+/usr/bin/ld: CMakeFiles/cpp_lidar.dir/src/cpp_lidar.cpp.o: in function `LidarPublisher::~LidarPublisher()':
+cpp_lidar.cpp:(.text._ZN14LidarPublisherD2Ev[_ZN14LidarPublisherD5Ev]+0x2c): undefined reference to `CYdLidar::turnOff()'
+/usr/bin/ld: cpp_lidar.cpp:(.text._ZN14LidarPublisherD2Ev[_ZN14LidarPublisherD5Ev]+0x3e): undefined reference to `CYdLidar::disconnecting()'
+/usr/bin/ld: cpp_lidar.cpp:(.text._ZN14LidarPublisherD2Ev[_ZN14LidarPublisherD5Ev]+0x74): undefined reference to `CYdLidar::~CYdLidar()'
+/usr/bin/ld: CMakeFiles/cpp_lidar.dir/src/cpp_lidar.cpp.o: in function `LidarPublisher::callback()':
+cpp_lidar.cpp:(.text._ZN14LidarPublisher8callbackEv[_ZN14LidarPublisher8callbackEv]+0x4a): undefined reference to `CYdLidar::doProcessSimple(LaserScan&)'
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/cpp_lidar.dir/build.make:141: cpp_lidar] 오류 1
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/cpp_lidar.dir/all] 오류 2
+make: *** [Makefile:141: all] 오류 2

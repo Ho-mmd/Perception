@@ -12,11 +12,11 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(std_msgs REQUIRED)
-# find_package(ydlidar_sdk REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(ydlidar_sdk REQUIRED)
 
 add_executable(cpp_lidar src/cpp_lidar.cpp)
-ament_target_dependencies(cpp_lidar rclcpp std_msgs)
+ament_target_dependencies(cpp_lidar rclcpp sensor_msgs ydlidar_sdk)
 
 # add_executable(listener src/subscriber_member_function.cpp)
 # ament_target_dependencies(listener rclcpp std_msgs)
