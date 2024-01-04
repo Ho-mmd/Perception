@@ -1,0 +1,23 @@
+[0.270s] Invoking command in '/home/ha/Desktop/ADS-Perception/lidar_ws/build/cpp_lidar': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ha/Desktop/gcamp_ros2_ws/install/py_topic_pkg:/opt/ros/foxy /usr/bin/cmake --build /home/ha/Desktop/ADS-Perception/lidar_ws/build/cpp_lidar -- -j8 -l8
+[0.309s] [100%] Built target cpp_lidar
+[0.537s] Invoked command in '/home/ha/Desktop/ADS-Perception/lidar_ws/build/cpp_lidar' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ha/Desktop/gcamp_ros2_ws/install/py_topic_pkg:/opt/ros/foxy /usr/bin/cmake --build /home/ha/Desktop/ADS-Perception/lidar_ws/build/cpp_lidar -- -j8 -l8
+[0.559s] Invoking command in '/home/ha/Desktop/ADS-Perception/lidar_ws/build/cpp_lidar': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ha/Desktop/gcamp_ros2_ws/install/py_topic_pkg:/opt/ros/foxy /usr/bin/cmake --install /home/ha/Desktop/ADS-Perception/lidar_ws/build/cpp_lidar
+[0.564s] -- Install configuration: ""
+[0.564s] -- Execute custom install script
+[0.565s] -- Up-to-date symlink: /home/ha/Desktop/ADS-Perception/lidar_ws/install/cpp_lidar/lib/cpp_lidar/cpp_lidar
+[0.565s] -- Up-to-date symlink: /home/ha/Desktop/ADS-Perception/lidar_ws/install/cpp_lidar/share/ament_index/resource_index/package_run_dependencies/cpp_lidar
+[0.565s] -- Up-to-date symlink: /home/ha/Desktop/ADS-Perception/lidar_ws/install/cpp_lidar/share/ament_index/resource_index/parent_prefix_path/cpp_lidar
+[0.565s] -- Up-to-date symlink: /home/ha/Desktop/ADS-Perception/lidar_ws/install/cpp_lidar/share/cpp_lidar/environment/ament_prefix_path.sh
+[0.566s] -- Up-to-date symlink: /home/ha/Desktop/ADS-Perception/lidar_ws/install/cpp_lidar/share/cpp_lidar/environment/ament_prefix_path.dsv
+[0.566s] -- Up-to-date symlink: /home/ha/Desktop/ADS-Perception/lidar_ws/install/cpp_lidar/share/cpp_lidar/environment/path.sh
+[0.566s] -- Up-to-date symlink: /home/ha/Desktop/ADS-Perception/lidar_ws/install/cpp_lidar/share/cpp_lidar/environment/path.dsv
+[0.566s] -- Up-to-date symlink: /home/ha/Desktop/ADS-Perception/lidar_ws/install/cpp_lidar/share/cpp_lidar/local_setup.bash
+[0.566s] -- Up-to-date symlink: /home/ha/Desktop/ADS-Perception/lidar_ws/install/cpp_lidar/share/cpp_lidar/local_setup.sh
+[0.566s] -- Up-to-date symlink: /home/ha/Desktop/ADS-Perception/lidar_ws/install/cpp_lidar/share/cpp_lidar/local_setup.zsh
+[0.566s] -- Up-to-date symlink: /home/ha/Desktop/ADS-Perception/lidar_ws/install/cpp_lidar/share/cpp_lidar/local_setup.dsv
+[0.566s] -- Symlinking: /home/ha/Desktop/ADS-Perception/lidar_ws/install/cpp_lidar/share/cpp_lidar/package.dsv
+[0.572s] -- Up-to-date symlink: /home/ha/Desktop/ADS-Perception/lidar_ws/install/cpp_lidar/share/ament_index/resource_index/packages/cpp_lidar
+[0.572s] -- Up-to-date symlink: /home/ha/Desktop/ADS-Perception/lidar_ws/install/cpp_lidar/share/cpp_lidar/cmake/cpp_lidarConfig.cmake
+[0.573s] -- Up-to-date symlink: /home/ha/Desktop/ADS-Perception/lidar_ws/install/cpp_lidar/share/cpp_lidar/cmake/cpp_lidarConfig-version.cmake
+[0.573s] -- Up-to-date symlink: /home/ha/Desktop/ADS-Perception/lidar_ws/install/cpp_lidar/share/cpp_lidar/package.xml
+[0.574s] Invoked command in '/home/ha/Desktop/ADS-Perception/lidar_ws/build/cpp_lidar' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ha/Desktop/gcamp_ros2_ws/install/py_topic_pkg:/opt/ros/foxy /usr/bin/cmake --install /home/ha/Desktop/ADS-Perception/lidar_ws/build/cpp_lidar

@@ -18,7 +18,7 @@ class LidarPublisher : public rclcpp::Node
     {
       publisher_ = this->create_publisher<sensor_msgs::msg::LaserScan>("lidar_data", 10);
       timer_ = this->create_wall_timer(
-        10ms, std::bind(&LidarPublisher::callback, this)
+        200ms, std::bind(&LidarPublisher::callback, this)
       );
 
       str_optval = "/dev/ttyUSB0";
@@ -85,7 +85,7 @@ class LidarPublisher : public rclcpp::Node
         }
 
         publisher_->publish(msg);
-        RCLCPP_INFO(this->get_logger(), "");
+        // RCLCPP_INFO(this->get_logger(), "");
       }
     }
 
