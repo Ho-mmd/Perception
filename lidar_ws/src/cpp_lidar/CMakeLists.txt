@@ -15,15 +15,27 @@ find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(ydlidar_sdk REQUIRED)
 
-add_executable(cpp_lidar src/cpp_lidar.cpp)
-ament_target_dependencies(cpp_lidar rclcpp sensor_msgs ydlidar_sdk)
+# include directories
+include_directories(
+  ${PROJECT_SOURCE_DIR}
+  ${PROJECT_SOURCE_DIR}/src
+  ${YDLIDAR_SDK_INCLUDE_DIRS})
 
-# add_executable(listener src/subscriber_member_function.cpp)
-# ament_target_dependencies(listener rclcpp std_msgs)
+add_executable(cpp_lidar src/cpp_lidar.cpp)
+ament_target_dependencies(cpp_lidar rclcpp sensor_msgs)
+target_link_libraries(cpp_lidar ${YDLIDAR_SDK_LIBRARIES})
+
+# add_executable(new_node)
+# ament_target_dependencies(new_node)
+# target_link_libraries(new_node)
 
 install(TARGETS
   cpp_lidar
-  # listener
+  # new_node
   DESTINATION lib/${PROJECT_NAME})
 
 ament_package()
+
+
+
+

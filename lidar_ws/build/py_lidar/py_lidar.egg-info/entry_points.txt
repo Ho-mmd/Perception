@@ -1,0 +1,3 @@
+[console_scripts]
+py_lidar = py_lidar.py_lidar:main
+

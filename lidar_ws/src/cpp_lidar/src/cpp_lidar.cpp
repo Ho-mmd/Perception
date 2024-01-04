@@ -77,11 +77,11 @@ class LidarPublisher : public rclcpp::Node
         msg.time_increment = scan.config.time_increment;
         msg.scan_time = scan.config.scan_time;
 
-        int size = (scan.config.max_angle - scan.config.min_angle) / scan.config.angle_increment + 1;
-        msg.ranges.resize(size);
-        for(size_t i=0; i < scan.points.size(); i++)
+        point_size = scan.points.size();
+        msg.ranges.resize(point_size);
+        for(size_t i = 0; i < point_size; i++)
         {
-          msg.ranges[i] = scan.points[i].range;
+          msg.ranges[i] = scan.points[point_size - i - 1].range;
         }
 
         publisher_->publish(msg);
@@ -101,6 +101,8 @@ class LidarPublisher : public rclcpp::Node
 
     LaserScan scan;
     sensor_msgs::msg::LaserScan msg;
+
+    size_t point_size;
 };
 
 
