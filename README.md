@@ -6,10 +6,12 @@ This project will cover the following content.
 - GPS (I'm not sure)
 - IMU (I'm not sure)
   
-With ROS2, RViz2, Gazebo, PyTorch, SLAM, Matlab ...
+With ROS2, RViz2, Gazebo, SLAM, Matlab, PyTorch, Yolo ...
 ## LIDAR code language performance
-python = CPU 2.34%
+Laptop + Ubuntu
+- python = CPU 2.34% (avg 8.4fps)
+- C++    = CPU     % (avg    fps)
 
-C++ = CPU
-
-(python = 8.4fps)
+Raspberry Pi + Raspbian
+- python = CPU     % (avg    fps)
+- C++    = CPU     % (avg    fps)
