@@ -9,9 +9,9 @@ This project will cover the following content.
 With ROS2, RViz2, Gazebo, SLAM, Matlab, PyTorch, Yolo ...
 ## LIDAR code language performance
 Laptop + Ubuntu
-- python = CPU 2.34% (avg 8.4fps)
-- C++    = CPU     % (avg    fps)
+- python = CPU 2.34% (max 8.3~8.4fps)
+- C++    = CPU     % (max 8.3~8.4fps)
 
 Raspberry Pi + Raspbian
-- python = CPU     % (avg    fps)
-- C++    = CPU     % (avg    fps)
+- python = CPU     % (max        fps)
+- C++    = CPU     % (max        fps)
