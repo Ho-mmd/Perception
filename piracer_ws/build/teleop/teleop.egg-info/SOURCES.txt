@@ -4,6 +4,7 @@ setup.py
 resource/teleop
 teleop/__init__.py
 teleop/controller.py
+teleop/receiver.py
 teleop.egg-info/PKG-INFO
 teleop.egg-info/SOURCES.txt
 teleop.egg-info/dependency_links.txt

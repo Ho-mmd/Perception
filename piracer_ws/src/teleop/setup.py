@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
             'controller = teleop.controller:main',
+            'receiver = teleop.receiver:main',
         ],
     },
 )
