@@ -1,0 +1,3 @@
+[console_scripts]
+teleop_pub = teleop.teleop_pub:main
+

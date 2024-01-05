@@ -3,74 +3,64 @@ from rclpy.node import Node
 
 from example_interfaces.msg import Int8
 
-import keyboard
+import pygame
 
 
 class TeleopPublisher(Node):
     def __init__(self):
         super().__init__('teleop_pub_node')
-        self.publisher_ = self.create_publisher(Int8, 'lidar_data', 10)
+        self.publisher_1 = self.create_publisher(Int8, 'steering_data', 10)
+        self.publisher_2 = self.create_publisher(Int8, 'throttle_data', 10)
         self.timer_ = self.create_timer(0.2, self.callback)  # [s]
 
-        ydlidar.os_init()
+        pygame.init()
 
-        self.laser = ydlidar.CYdLidar()
-        self.laser.setlidaropt(ydlidar.LidarPropSerialPort, "/dev/ttyUSB0")
-        self.laser.setlidaropt(ydlidar.LidarPropSerialBaudrate, 128000)
-        self.laser.setlidaropt(ydlidar.LidarPropLidarType, ydlidar.TYPE_TRIANGLE)
-        self.laser.setlidaropt(ydlidar.LidarPropDeviceType, ydlidar.YDLIDAR_TYPE_SERIAL)
-        self.laser.setlidaropt(ydlidar.LidarPropScanFrequency, 10.0)
-        self.laser.setlidaropt(ydlidar.LidarPropSampleRate, 5)
-        self.laser.setlidaropt(ydlidar.LidarPropSingleChannel, False)
-        self.laser.setlidaropt(ydlidar.LidarPropMaxAngle, 180.0)
-        self.laser.setlidaropt(ydlidar.LidarPropMinAngle, -180.0)
-        self.laser.setlidaropt(ydlidar.LidarPropMaxRange, 10.0)
-        self.laser.setlidaropt(ydlidar.LidarPropMinRange, 0.12)
-        self.laser.setlidaropt(ydlidar.LidarPropIntenstiy, False)
+        self.steering_msg = Int8()
+        self.throttle_msg = Int8()
 
-        self.laser.initialize()
-        self.laser.turnOn()
+        self.steering_msg.data = 0
+        self.throttle_msg.data = 0
 
-        self.scan = ydlidar.LaserScan()
-        self.msg = LaserScan()
+        self.publisher_1.publish(self.steering_msg)
+        self.publisher_2.publish(self.throttle_msg)
 
-        if self.laser.doProcessSimple(self.scan):
-            self.msg.header.frame_id = "map"                               # string     # Transform frame with which this data is associated
-            self.msg.angle_min = self.scan.config.min_angle                # float32    # Start angle of the scan [rad]
-            self.msg.angle_max = self.scan.config.max_angle                # float32    # End angle of the scan [rad]
-            self.msg.range_min = self.scan.config.min_range                # float32    # Minimum range value [m]
-            self.msg.range_max = self.scan.config.max_range                # float32    # Maximum range value [m]
-            self.msg.intensities = []                                      # float32[]  # Intensity data
+        self.w = False
+        self.a = False
+        self.s = False
+        self.d = False
 
 
     def callback(self):
-        if self.laser.doProcessSimple(self.scan):
-            self.msg.header.stamp.sec = int(self.scan.stamp // 1e9)        # int32      # Indicates a specific point in time [s]
-            self.msg.header.stamp.nanosec = int(self.scan.stamp % 1e9)     # uint32     # Indicates a specific point in time [ns]
-            self.msg.angle_increment = self.scan.config.angle_increment    # float32    # Angular distance between measurements [rad]
-            self.msg.time_increment = self.scan.config.time_increment      # float32    # Time between measurements [s]
-            self.msg.scan_time = self.scan.config.scan_time                # float32    # Time between scans [s]
+        self.w = keyboard.is_pressed('w')
+        self.a = keyboard.is_pressed('a')
+        self.s = keyboard.is_pressed('s')
+        self.d = keyboard.is_pressed('d')
 
-            self.msg.ranges = [point.range for point in self.scan.points]  # float32[]  # Range data [m]
-            self.msg.ranges.reverse()
+        if self.a and self.d:
+            self.steering_msg.data = 0
+        elif self.a:
+            self.steering_msg.data = -1
+        elif self.d:
+            self.steering_msg.data = 1
+        else:
+            self.steering_msg.data = 0
         
-            self.publisher_.publish(self.msg)
-            # self.get_logger().info('')
+        self.publisher1_.publish(self.steering_msg)
+        self.get_logger().info('')
 
-
+    
     def __del__(self):
-        self.laser.turnOff()
-        self.laser.disconnecting()
+        pygame.quit()
 
 
 def main(args=None):
     rclpy.init(args=args)
 
-    lidar_publisher = LidarPublisher()
+    teleop_publisher = TeleopPublisher()
 
-    rclpy.spin(lidar_publisher)
+    rclpy.spin(teleop_publisher)
 
-    lidar_publisher.destroy_node()
+    teleop_publisher.destroy_node()
     rclpy.shutdown()
 
 
