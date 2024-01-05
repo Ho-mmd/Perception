@@ -18,3 +18,6 @@ RaspberryPi_Ubuntu20.04
 - cpp = CPU 2.51%
 
 maximum rotation speed = 8.3~8.4rps (HW specific)
+
+enable lidar connection: sudo chmod a+rw /dev/ttyUSB0  
+enable wifi connection: sudo ufw disable
