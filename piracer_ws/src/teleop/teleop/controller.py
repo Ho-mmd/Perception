@@ -53,12 +53,12 @@ class TeleopPublisher(Node):
         if self.pre_steering_data is None or self.pre_steering_data != self.steering_msg.data:
             self.pre_steering_data = self.steering_msg.data
             self.publisher_1.publish(self.steering_msg)
-            self.get_logger().info('')
+            # self.get_logger().info('')
 
         if self.pre_throttle_data is None or self.pre_throttle_data != self.throttle_msg.data:
             self.pre_throttle_data = self.throttle_msg.data
             self.publisher_2.publish(self.throttle_msg)
-            self.get_logger().info('')
+            # self.get_logger().info('')
 
 
 def main(args=None):
