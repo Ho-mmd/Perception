@@ -23,7 +23,7 @@ class TeleopSubscriber(Node):
 
 
     def throttle_callback(self, throttle_msg):
-        self.piracer.set_throttle_percent(throttle_msg.data * 0.3)
+        self.piracer.set_throttle_percent(throttle_msg.data * 0.5)
         # self.get_logger().info('')
 
 
