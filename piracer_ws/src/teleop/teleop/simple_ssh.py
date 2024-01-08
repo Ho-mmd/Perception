@@ -11,6 +11,10 @@ pygame.display.set_caption("Controller (w, a, s, d)")
 
 piracer = PiRacerStandard()
 
+piracer.set_steering_percent(0.0)
+piracer.set_throttle_percent(0.0)
+time.sleep(1)
+
 steering_data = None
 throttle_data = None
 pre_steering_data = None
