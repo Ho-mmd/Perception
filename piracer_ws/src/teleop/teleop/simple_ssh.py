@@ -11,6 +11,11 @@ pygame.display.set_caption("Controller (w, a, s, d)")
 
 piracer = PiRacerStandard()
 
+steering_data = None
+throttle_data = None
+pre_steering_data = None
+pre_throttle_data = None
+
 running = True
 while running:
     for event in pygame.event.get():
@@ -20,22 +25,30 @@ while running:
     keys = pygame.key.get_pressed()
 
     if keys[pygame.K_a] and keys[pygame.K_d]:
-        piracer.set_steering_percent(0.0)
+        steering_data = 0
     elif keys[pygame.K_a]:
-        piracer.set_steering_percent(1.0)
+        steering_data = -1
     elif keys[pygame.K_d]:
-        piracer.set_steering_percent(-1.0)
+        steering_data = 1
     else:
-        piracer.set_steering_percent(0.0)
+        steering_data = 0
 
     if keys[pygame.K_w] and keys[pygame.K_s]:
-        piracer.set_throttle_percent(0.0)
+        throttle_data = 0
     elif keys[pygame.K_w]:
-        piracer.set_throttle_percent(5.0)
+        throttle_data = 1
     elif keys[pygame.K_s]:
-        piracer.set_throttle_percent(-5.0)
+        throttle_data = -1
     else:
-        piracer.set_throttle_percent(0.0)
+        throttle_data = 0
+
+    if pre_steering_data is None or pre_steering_data != steering_data:
+        pre_steering_data = steering_data
+        piracer.set_steering_percent(steering_data * -1.0)
+    
+    if pre_throttle_data is None or pre_throttle_data != throttle_data:
+        pre_throttle_data = throttle_data
+        piracer.set_throttle_percent(throttle_data * 0.5)
 
     time.sleep(0.1)
 
