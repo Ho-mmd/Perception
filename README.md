@@ -21,7 +21,7 @@ maximum rotation speed = 8.3~8.4rps (HW specific)
 
 Manual teleoperation latency  
 - pub-sub: 0.03s
-- simple SSH: s
+- simple SSH: almost 0s
 
 ```bash
 # enable lidar connection
@@ -29,4 +29,7 @@ sudo chmod a+rw /dev/ttyUSB0
 
 # enable inter-machine connection
 sudo ufw disable
+
+# enable controller using ssh connection
+ssh <?>@<?> -Y
 ```
