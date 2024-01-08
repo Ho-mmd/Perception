@@ -19,5 +19,14 @@ RaspberryPi_Ubuntu20.04
 
 maximum rotation speed = 8.3~8.4rps (HW specific)
 
-enable lidar connection: sudo chmod a+rw /dev/ttyUSB0  
-enable wifi connection: sudo ufw disable
+Manual teleoperation latency  
+- pub-sub: 0.03s
+- simple SSH: s
+
+```bash
+# enable lidar connection
+sudo chmod a+rw /dev/ttyUSB0  
+
+# enable inter-machine connection
+sudo ufw disable
+```
