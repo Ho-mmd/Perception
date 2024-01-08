@@ -27,6 +27,9 @@ class TeleopPublisher(Node):
         self.s = False
         self.d = False
 
+        self.pre_steering_data = None
+        self.pre_throttle_data = None
+
 
     def callback(self):
         if self.a and self.d:
@@ -47,9 +50,15 @@ class TeleopPublisher(Node):
         else:
             self.throttle_msg.data = 0
 
-        self.publisher_1.publish(self.steering_msg)
-        self.publisher_2.publish(self.throttle_msg)
-        # self.get_logger().info('')
+        if self.pre_steering_data is None or self.pre_steering_data != self.steering_msg.data:
+            self.pre_steering_data = self.steering_msg.data
+            self.publisher_1.publish(self.steering_msg)
+            self.get_logger().info('')
+
+        if self.pre_throttle_data is None or self.pre_throttle_data != self.throttle_msg.data:
+            self.pre_throttle_data = self.throttle_msg.data
+            self.publisher_2.publish(self.throttle_msg)
+            self.get_logger().info('')
 
 
 def main(args=None):

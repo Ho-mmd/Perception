@@ -18,11 +18,13 @@ class TeleopSubscriber(Node):
 
 
     def steering_callback(self, steering_msg):
-        self.piracer.set_steering_percent(steering_msg.data * 1.0)
+        self.piracer.set_steering_percent(steering_msg.data * -1.0)
+        self.get_logger().info('')
 
 
     def throttle_callback(self, throttle_msg):
         self.piracer.set_throttle_percent(throttle_msg.data * 0.3)
+        self.get_logger().info('')
 
 
 def main(args=None):
