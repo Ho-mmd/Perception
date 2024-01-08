@@ -1,0 +1,26 @@
+[0.770s] Invoking command in '/home/ha/Desktop/ADS-Perception/piracer_ws/build/teleop': PYTHONPATH=/home/ha/Desktop/ADS-Perception/piracer_ws/build/teleop/prefix_override:/home/ha/Desktop/ADS-Perception/piracer_ws/install/teleop/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/ha/Desktop/ADS-Perception/piracer_ws/build/teleop/build --no-deps install_data
+[0.933s] running develop
+[1.027s] running egg_info
+[1.027s] creating teleop.egg-info
+[1.027s] writing teleop.egg-info/PKG-INFO
+[1.027s] writing dependency_links to teleop.egg-info/dependency_links.txt
+[1.027s] writing entry points to teleop.egg-info/entry_points.txt
+[1.027s] writing requirements to teleop.egg-info/requires.txt
+[1.027s] writing top-level names to teleop.egg-info/top_level.txt
+[1.028s] writing manifest file 'teleop.egg-info/SOURCES.txt'
+[1.051s] reading manifest file 'teleop.egg-info/SOURCES.txt'
+[1.051s] writing manifest file 'teleop.egg-info/SOURCES.txt'
+[1.076s] running build_ext
+[1.076s] Creating /home/ha/Desktop/ADS-Perception/piracer_ws/install/teleop/lib/python3.8/site-packages/site.py
+[1.077s] Creating /home/ha/Desktop/ADS-Perception/piracer_ws/install/teleop/lib/python3.8/site-packages/teleop.egg-link (link to .)
+[1.078s] Installing controller script to /home/ha/Desktop/ADS-Perception/piracer_ws/install/teleop/lib/teleop
+[1.078s] Installing receiver script to /home/ha/Desktop/ADS-Perception/piracer_ws/install/teleop/lib/teleop
+[1.078s] 
+[1.078s] Installed /home/ha/Desktop/ADS-Perception/piracer_ws/build/teleop
+[1.078s] running install_data
+[1.078s] creating /home/ha/Desktop/ADS-Perception/piracer_ws/install/teleop/share/ament_index
+[1.078s] creating /home/ha/Desktop/ADS-Perception/piracer_ws/install/teleop/share/ament_index/resource_index
+[1.079s] creating /home/ha/Desktop/ADS-Perception/piracer_ws/install/teleop/share/ament_index/resource_index/packages
+[1.079s] copying resource/teleop -> /home/ha/Desktop/ADS-Perception/piracer_ws/install/teleop/share/ament_index/resource_index/packages
+[1.079s] copying package.xml -> /home/ha/Desktop/ADS-Perception/piracer_ws/install/teleop/share/teleop
+[1.100s] Invoked command in '/home/ha/Desktop/ADS-Perception/piracer_ws/build/teleop' returned '0': PYTHONPATH=/home/ha/Desktop/ADS-Perception/piracer_ws/build/teleop/prefix_override:/home/ha/Desktop/ADS-Perception/piracer_ws/install/teleop/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/ha/Desktop/ADS-Perception/piracer_ws/build/teleop/build --no-deps install_data
