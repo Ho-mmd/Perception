@@ -43,6 +43,13 @@ cmake ..
 make  
 sudo make install
 
+git clone https://github.com/abseil/abseil-cpp
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
+
 ws  
 git clone https://github.com/ros2/cartographer_ros/tree/ros2  
 colcon build  
