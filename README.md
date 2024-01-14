@@ -34,6 +34,15 @@ sudo ufw disable
 ssh <?>@<?> -Y
 ```
 
-
 https://ros2-industrial-workshop.readthedocs.io/en/latest/_source/navigation/ROS2-Cartographer.html  
-https://github.com/ros2/cartographer_ros/tree/ros2
+
+git clone https://github.com/ros2/cartographer/tree/foxy  
+mkdir build  
+cd build  
+cmake ..  
+make  
+sudo make install
+
+ws  
+git clone https://github.com/ros2/cartographer_ros/tree/ros2  
+colcon build  
