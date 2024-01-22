@@ -56,3 +56,5 @@ colcon build
 
 
 ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r __ns:=/skidbot
+
+xacro [in.urdf.xacro] > [out.urdf]
