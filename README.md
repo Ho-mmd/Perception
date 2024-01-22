@@ -53,3 +53,6 @@ sudo make install
 ws  
 git clone https://github.com/ros2/cartographer_ros/tree/ros2  
 colcon build  
+
+
+ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r __ns:=/skidbot
