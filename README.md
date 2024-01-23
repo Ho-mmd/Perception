@@ -33,28 +33,3 @@ sudo ufw disable
 # enable controller using ssh connection
 ssh <?>@<?> -Y
 ```
-
-https://ros2-industrial-workshop.readthedocs.io/en/latest/_source/navigation/ROS2-Cartographer.html  
-
-git clone https://github.com/ros2/cartographer/tree/foxy  
-mkdir build  
-cd build  
-cmake ..  
-make  
-sudo make install
-
-git clone https://github.com/abseil/abseil-cpp
-mkdir build
-cd build
-cmake ..
-make
-sudo make install
-
-ws  
-git clone https://github.com/ros2/cartographer_ros/tree/ros2  
-colcon build  
-
-
-ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r __ns:=/skidbot
-
-xacro [in.urdf.xacro] > [out.urdf]
