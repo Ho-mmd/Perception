@@ -12,8 +12,8 @@ import xacro
 
 
 def generate_launch_description():
-    robot_file = "diffbot.xacro"
-    package_name = "diff_drive"
+    robot_file = "ackermannbot.xacro"
+    package_name = "ackermann_drive"
     world_file_name = "empty_sky.world"
 
     pkg_path = os.path.join(get_package_share_directory(package_name))
@@ -49,7 +49,7 @@ def generate_launch_description():
         package='gazebo_ros', 
         executable='spawn_entity.py',
         output='screen',
-        arguments=['-topic', 'robot_description', '-entity', 'diffbot'],
+        arguments=['-topic', 'robot_description', '-entity', 'ackermannbot'],
     )
 
     return LaunchDescription(
