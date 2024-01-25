@@ -29,6 +29,81 @@
     </visual>
   </link>
 
+  <!-- LINK: main_steer -->
+  <link name='main_steer'>
+    <pose>0 0 0 0 0 0</pose>
+
+    <inertial>
+      <mass value="3.0"/>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+
+    <collision name='main_steer_collision'>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <geometry>
+        <box size=".1 .1 .1"/>
+      </geometry>
+    </collision>
+
+    <visual name='main_steer_visual'>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <geometry>
+        <box size=".1 .1 .1"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- LINK: left_steer -->
+  <link name='left_steer'>
+    <pose>0 0 0 0 0 0</pose>
+
+    <inertial>
+      <mass value="3.0"/>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+
+    <collision name='left_steer_collision'>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <geometry>
+        <box size=".1 .1 .1"/>
+      </geometry>
+    </collision>
+
+    <visual name='left_steer_visual'>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <geometry>
+        <box size=".1 .1 .1"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- LINK: right_steer -->
+  <link name='right_steer'>
+    <pose>0 0 0 0 0 0</pose>
+
+    <inertial>
+      <mass value="3.0"/>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+
+    <collision name='right_steer_collision'>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <geometry>
+        <box size=".1 .1 .1"/>
+      </geometry>
+    </collision>
+
+    <visual name='right_steer_visual'>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <geometry>
+        <box size=".1 .1 .1"/>
+      </geometry>
+    </visual>
+  </link>
+
   <!-- LINK: front_left_wheel -->
   <link name="front_left_wheel">
     <inertial>
@@ -151,6 +226,36 @@
     <child link="chassis"/>
   </joint>
 
+  <!-- JOINT: main_steer -->
+  <joint type="continuous" name="main_steer_joint">
+    <origin xyz="0 0 1" rpy="0 0 0"/>
+    <child link="main_steer"/>
+    <parent link="base_footprint"/>
+    <axis xyz="0 0 1" rpy="0 0 0"/>
+    <limit effort="10000" velocity="1000"/>
+    <dynamics damping="1.0" friction="1.0"/>
+  </joint>
+
+  <!-- JOINT: left_steer -->
+  <joint type="continuous" name="left_steer_joint">
+    <origin xyz="0 1 0" rpy="0 0 0"/>
+    <child link="left_steer"/>
+    <parent link="base_footprint"/>
+    <axis xyz="0 0 1" rpy="0 0 0"/>
+    <limit effort="10000" velocity="1000"/>
+    <dynamics damping="1.0" friction="1.0"/>
+  </joint>
+
+  <!-- JOINT: right_steer -->
+  <joint type="continuous" name="right_steer_joint">
+    <origin xyz="0 -1 0" rpy="0 0 0"/>
+    <child link="right_steer"/>
+    <parent link="base_footprint"/>
+    <axis xyz="0 0 1" rpy="0 0 0"/>
+    <limit effort="10000" velocity="1000"/>
+    <dynamics damping="1.0" friction="1.0"/>
+  </joint>
+
   <!-- JOINT: wheel -->
   <joint type="continuous" name="front_left_wheel_joint">
     <origin xyz="0.13 0.15 0" rpy="0 0 0"/>
@@ -231,32 +336,42 @@
 
   <!-- PLUGIN: drive -->
   <gazebo>
-    <plugin name="diff_drive_controller" filename="libgazebo_ros_diff_drive.so">
+    <plugin name="ackermann_drive_controller" filename="libgazebo_ros_ackermann_drive.so">
       <ros>
-        <namespace>/ackermannbot</namespace>
-        <argument>/cmd_vel:=cmd_vel</argument>
-        <argument>/odom:=odom</argument>
+        <namespace>demo</namespace>
+        <remapping>cmd_vel:=cmd_vel</remapping>
+        <remapping>odom:=odom</remapping>
+        <remapping>distance:=distance</remapping>
       </ros>
+
       <update_rate>100.0</update_rate>
-      <num_wheel_pairs>2</num_wheel_pairs>
       <odometry_frame>odom</odometry_frame>
-
-      <left_joint>front_left_wheel_joint</left_joint>
-      <left_joint>back_left_wheel_joint</left_joint>
-      <wheel_separation>0.4</wheel_separation>
-      <wheel_diameter>0.2</wheel_diameter>
-
-      <right_joint>front_right_wheel_joint</right_joint>
-      <right_joint>back_right_wheel_joint</right_joint>
-      <wheel_separation>0.4</wheel_separation>
-      <wheel_diameter>0.2</wheel_diameter>
-
       <robot_base_frame>base_footprint</robot_base_frame>
-      <max_wheel_torque>15</max_wheel_torque>
+
+      <front_left_joint>front_left_wheel_joint</front_left_joint>
+      <front_right_joint>front_right_wheel_joint</front_right_joint>
+      <rear_left_joint>back_left_wheel_joint</rear_left_joint>
+      <rear_right_joint>back_right_wheel_joint</rear_right_joint>
+
+      <left_steering_joint>left_steer_joint</left_steering_joint>
+      <right_steering_joint>right_steer_joint</right_steering_joint>
+      <steering_wheel_joint>main_steer_joint</steering_wheel_joint>
+      
+      <max_steer>0.6458</max_steer>
+      <max_steering_angle>7.85</max_steering_angle>
+      <max_speed>20</max_speed>
+
+      <!-- <left_steering_pid_gain>1500 0 1</left_steering_pid_gain>
+      <left_steering_i_range>0 0</left_steering_i_range>
+      <right_steering_pid_gain>1500 0 1</right_steering_pid_gain>
+      <right_steering_i_range>0 0</right_steering_i_range>
+      <linear_velocity_pid_gain>1000 0 1</linear_velocity_pid_gain>
+      <linear_velocity_i_range>0 0</linear_velocity_i_range> -->
 
       <publish_odom>true</publish_odom>
       <publish_odom_tf>true</publish_odom_tf>
-      <publish_wheel_tf>false</publish_wheel_tf>
+      <publish_wheel_tf>true</publish_wheel_tf>
+      <publish_distance>true</publish_distance>
     </plugin>
   </gazebo>
 
