@@ -338,12 +338,11 @@
   <gazebo>
     <plugin name="ackermann_drive_controller" filename="libgazebo_ros_ackermann_drive.so">
       <ros>
-        <namespace>ackermannbot</namespace>
-        <remapping>cmd_vel:=cmd_vel</remapping>
-        <remapping>odom:=odom</remapping>
-        <remapping>distance:=distance</remapping>
+        <namespace>/ackermannbot</namespace>
+        <argument>/cmd_vel:=cmd_vel</argument>
+        <argument>/odom:=odom</argument>
+        <argument>/distance:=distance</argument>
       </ros>
-
       <update_rate>100.0</update_rate>
       <odometry_frame>odom</odometry_frame>
       <robot_base_frame>base_footprint</robot_base_frame>
@@ -359,7 +358,7 @@
       
       <max_steer>0.6458</max_steer>
       <max_steering_angle>7.85</max_steering_angle>
-      <max_speed>10</max_speed>
+      <max_speed>100</max_speed>
 
       <left_steering_pid_gain>1500 0 1</left_steering_pid_gain>
       <left_steering_i_range>0 0</left_steering_i_range>
@@ -370,8 +369,8 @@
 
       <publish_odom>true</publish_odom>
       <publish_odom_tf>true</publish_odom_tf>
-      <publish_wheel_tf>true</publish_wheel_tf>
-      <publish_distance>true</publish_distance>
+      <publish_wheel_tf>false</publish_wheel_tf>
+      <publish_distance>false</publish_distance>
     </plugin>
   </gazebo>
 
