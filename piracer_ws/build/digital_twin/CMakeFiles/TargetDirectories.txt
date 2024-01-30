@@ -1,0 +1,9 @@
+/home/ha/Desktop/ADS-Perception/piracer_ws/build/digital_twin/CMakeFiles/install/strip.dir
+/home/ha/Desktop/ADS-Perception/piracer_ws/build/digital_twin/CMakeFiles/install/local.dir
+/home/ha/Desktop/ADS-Perception/piracer_ws/build/digital_twin/CMakeFiles/install.dir
+/home/ha/Desktop/ADS-Perception/piracer_ws/build/digital_twin/CMakeFiles/list_install_components.dir
+/home/ha/Desktop/ADS-Perception/piracer_ws/build/digital_twin/CMakeFiles/rebuild_cache.dir
+/home/ha/Desktop/ADS-Perception/piracer_ws/build/digital_twin/CMakeFiles/edit_cache.dir
+/home/ha/Desktop/ADS-Perception/piracer_ws/build/digital_twin/CMakeFiles/test.dir
+/home/ha/Desktop/ADS-Perception/piracer_ws/build/digital_twin/CMakeFiles/digital_twin_uninstall.dir
+/home/ha/Desktop/ADS-Perception/piracer_ws/build/digital_twin/CMakeFiles/uninstall.dir

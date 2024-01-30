@@ -1,0 +1,4 @@
+Invoking command in '/home/ha/Desktop/ADS-Perception/piracer_ws/build/digital_twin': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/ha/Desktop/ADS-Perception/piracer_ws/build/digital_twin -- -j8 -l8
+Invoked command in '/home/ha/Desktop/ADS-Perception/piracer_ws/build/digital_twin' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/ha/Desktop/ADS-Perception/piracer_ws/build/digital_twin -- -j8 -l8
+Invoking command in '/home/ha/Desktop/ADS-Perception/piracer_ws/build/digital_twin': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/ha/Desktop/ADS-Perception/piracer_ws/build/digital_twin
+Invoked command in '/home/ha/Desktop/ADS-Perception/piracer_ws/build/digital_twin' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/ha/Desktop/ADS-Perception/piracer_ws/build/digital_twin
