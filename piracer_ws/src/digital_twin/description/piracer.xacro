@@ -29,6 +29,56 @@
     </visual>
   </link>
 
+  <!-- LINK: left_steer -->
+  <link name="left_steer">
+    <pose>0 0 0 0 0 0</pose>
+
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+
+    <collision name="left_steer_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.022" radius="0.002"/>
+      </geometry>
+    </collision>
+
+    <visual name="left_steer_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.022" radius="0.002"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- LINK: right_steer -->
+  <link name="right_steer">
+    <pose>0 0 0 0 0 0</pose>
+
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+
+    <collision name="right_steer_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.022" radius="0.002"/>
+      </geometry>
+    </collision>
+
+    <visual name="right_steer_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.022" radius="0.002"/>
+      </geometry>
+    </visual>
+  </link>
+
   <!-- LINK: board -->
   <link name="board">
     <pose>0 0 0 0 0 0</pose>
@@ -48,7 +98,7 @@
     </visual>
   </link>
 
-  <!-- LINK: board -->
+  <!-- LINK: rpi -->
   <link name="rpi">
     <pose>0 0 0 0 0 0</pose>
 
@@ -67,9 +117,252 @@
     </visual>
   </link>
 
+  <!-- LINK: motor1 -->
+  <link name="motor1">
+    <pose>0 0 0 0 0 0</pose>
+
+    <collision name="motor1_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/motor.stl"/>
+      </geometry>
+    </collision>
+
+    <visual name="motor1_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/motor.stl"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- LINK: motor2 -->
+  <link name="motor2">
+    <pose>0 0 0 0 0 0</pose>
+
+    <collision name="motor2_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/motor.stl"/>
+      </geometry>
+    </collision>
+
+    <visual name="motor2_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/motor.stl"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- LINK: cover -->
+  <link name="cover">
+    <pose>0 0 0 0 0 0</pose>
+
+    <collision name="cover_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/cover.stl"/>
+      </geometry>
+    </collision>
+
+    <visual name="cover_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/cover.stl"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- LINK: rear_left_tire -->
+  <link name="rear_left_tire">
+    <pose>0 0 0 0 0 0</pose>
+
+    <inertial>
+      <mass value="1.0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+
+    <collision name="rear_left_tire_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/tire.stl"/>
+      </geometry>
+    </collision>
+
+    <visual name="rear_left_tire_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/tire.stl"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- LINK: rear_left_disk -->
+  <link name="rear_left_disk">
+    <pose>0 0 0 0 0 0</pose>
+
+    <collision name="rear_left_disk_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/disk.stl"/>
+      </geometry>
+    </collision>
+
+    <visual name="rear_left_disk_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/disk.stl"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- LINK: rear_right_tire -->
+  <link name="rear_right_tire">
+    <pose>0 0 0 0 0 0</pose>
+
+    <inertial>
+      <mass value="1.0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+
+    <collision name="rear_right_tire_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/tire.stl"/>
+      </geometry>
+    </collision>
+
+    <visual name="rear_right_tire_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/tire.stl"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- LINK: rear_right_disk -->
+  <link name="rear_right_disk">
+    <pose>0 0 0 0 0 0</pose>
+
+    <collision name="rear_right_disk_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/disk.stl"/>
+      </geometry>
+    </collision>
+
+    <visual name="rear_right_disk_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/disk.stl"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- LINK: front_left_tire -->
+  <link name="front_left_tire">
+    <pose>0 0 0 0 0 0</pose>
+
+    <inertial>
+      <mass value="1.0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+
+    <collision name="front_left_tire_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/tire.stl"/>
+      </geometry>
+    </collision>
+
+    <visual name="front_left_tire_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/tire.stl"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- LINK: front_left_disk -->
+  <link name="front_left_disk">
+    <pose>0 0 0 0 0 0</pose>
+
+    <collision name="front_left_disk_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/disk.stl"/>
+      </geometry>
+    </collision>
+
+    <visual name="front_left_disk_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/disk.stl"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- LINK: front_right_tire -->
+  <link name="front_right_tire">
+    <pose>0 0 0 0 0 0</pose>
+
+    <inertial>
+      <mass value="1.0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+
+    <collision name="front_right_tire_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/tire.stl"/>
+      </geometry>
+    </collision>
+
+    <visual name="front_right_tire_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/tire.stl"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- LINK: front_right_disk -->
+  <link name="front_right_disk">
+    <pose>0 0 0 0 0 0</pose>
+
+    <collision name="front_right_disk_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/disk.stl"/>
+      </geometry>
+    </collision>
+
+    <visual name="front_right_disk_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/disk.stl"/>
+      </geometry>
+    </visual>
+  </link>
+
   <!-- COLOR: chassis -->
   <gazebo reference="chassis">
     <material>Gazebo/Green</material>
+  </gazebo>
+
+  <!-- COLOR: left_steer -->
+  <gazebo reference="left_steer">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <!-- COLOR: right_steer -->
+  <gazebo reference="right_steer">
+    <material>Gazebo/Grey</material>
   </gazebo>
 
   <!-- COLOR: board -->
@@ -82,11 +375,86 @@
     <material>Gazebo/Green</material>
   </gazebo>
 
+  <!-- COLOR: motor1 -->
+  <gazebo reference="motor1">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <!-- COLOR: motor2 -->
+  <gazebo reference="motor2">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <!-- COLOR: cover -->
+  <gazebo reference="cover">
+    <material>Gazebo/GreenGlow</material>
+  </gazebo>
+
+  <!-- COLOR: rear_left_tire -->
+  <gazebo reference="rear_left_tire">
+    <material>Gazebo/DarkGrey</material>
+  </gazebo>
+
+  <!-- COLOR: rear_left_disk -->
+  <gazebo reference="rear_left_disk">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <!-- COLOR: rear_right_tire -->
+  <gazebo reference="rear_right_tire">
+    <material>Gazebo/DarkGrey</material>
+  </gazebo>
+
+  <!-- COLOR: rear_right_disk -->
+  <gazebo reference="rear_right_disk">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <!-- COLOR: front_left_tire -->
+  <gazebo reference="front_left_tire">
+    <material>Gazebo/DarkGrey</material>
+  </gazebo>
+
+  <!-- COLOR: front_left_disk -->
+  <gazebo reference="front_left_disk">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <!-- COLOR: front_right_tire -->
+  <gazebo reference="front_right_tire">
+    <material>Gazebo/DarkGrey</material>
+  </gazebo>
+
+  <!-- COLOR: front_right_disk -->
+  <gazebo reference="front_right_disk">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
   <!-- JOINT: chassis -->
   <joint name="chassis_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <parent link="base_footprint"/>
     <child link="chassis"/>
+  </joint>
+
+  <!-- JOINT: left_steer -->
+  <joint name="left_steer_joint" type="continuous">
+    <origin xyz="0.179 0.060 0.013" rpy="0 0 0"/>
+    <parent link="chassis"/>
+    <child link="left_steer"/>
+    <axis xyz="0 0 1" rpy="0 0 0"/>
+    <limit effort="10000" velocity="1000"/>
+    <dynamics damping="1.0" friction="1.0"/>
+  </joint>
+
+  <!-- JOINT: right_steer -->
+  <joint name="right_steer_joint" type="continuous">
+    <origin xyz="0.179 -0.060 0.013" rpy="0 0 0"/>
+    <parent link="chassis"/>
+    <child link="right_steer"/>
+    <axis xyz="0 0 1" rpy="0 0 0"/>
+    <limit effort="10000" velocity="1000"/>
+    <dynamics damping="1.0" friction="1.0"/>
   </joint>
 
   <!-- JOINT: board -->
@@ -101,5 +469,94 @@
     <origin xyz="0.035 0 0.027" rpy="0 0 0"/>
     <parent link="board"/>
     <child link="rpi"/>
+  </joint>
+
+  <!-- JOINT: motor1 -->
+  <joint name="motor1_joint" type="fixed">
+    <origin xyz="0.024 0.047 0.023" rpy="1.570796 0 0"/>
+    <parent link="chassis"/>
+    <child link="motor1"/>
+  </joint>
+
+  <!-- JOINT: motor2 -->
+  <joint name="motor2_joint" type="fixed">
+    <origin xyz="0.024 -0.047 0.023" rpy="1.570796 0 0"/>
+    <parent link="chassis"/>
+    <child link="motor2"/>
+  </joint>
+
+  <!-- JOINT: cover -->
+  <joint name="cover_joint" type="fixed">
+    <origin xyz="0.024 0 0.023" rpy="1.570796 0 0"/>
+    <parent link="chassis"/>
+    <child link="cover"/>
+  </joint>
+
+  <!-- JOINT: rear_left_tire -->
+  <joint name="rear_left_tire_joint" type="continuous">
+    <origin xyz="0.024 0.0855 0.015" rpy="1.570796 0 0"/>
+    <parent link="chassis"/>
+    <child link="rear_left_tire"/>
+    <axis xyz="0 1 0" rpy="0 0 0"/>
+    <limit effort="10000" velocity="1000"/>
+    <dynamics damping="1.0" friction="1.0"/>
+  </joint>
+
+  <!-- JOINT: rear_left_disk -->
+  <joint name="rear_left_disk_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-3.141592 0 0"/>
+    <parent link="rear_left_tire"/>
+    <child link="rear_left_disk"/>
+  </joint>
+
+  <!-- JOINT: rear_right_tire -->
+  <joint name="rear_right_tire_joint" type="continuous">
+    <origin xyz="0.024 -0.0855 0.015" rpy="1.570796 0 0"/>
+    <parent link="chassis"/>
+    <child link="rear_right_tire"/>
+    <axis xyz="0 1 0" rpy="0 0 0"/>
+    <limit effort="10000" velocity="1000"/>
+    <dynamics damping="1.0" friction="1.0"/>
+  </joint>
+
+  <!-- JOINT: rear_right_disk -->
+  <joint name="rear_right_disk_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="rear_right_tire"/>
+    <child link="rear_right_disk"/>
+  </joint>
+
+  <!-- JOINT: front_left_tire -->
+  <joint name="front_left_tire_joint" type="continuous">
+    <origin xyz="0 0.014 0.002" rpy="1.570796 0 0"/>
+    <parent link="left_steer"/>
+    <child link="front_left_tire"/>
+    <axis xyz="0 1 0" rpy="0 0 0"/>
+    <limit effort="10000" velocity="1000"/>
+    <dynamics damping="1.0" friction="1.0"/>
+  </joint>
+
+  <!-- JOINT: front_left_disk -->
+  <joint name="front_left_disk_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-3.141592 0 0"/>
+    <parent link="front_left_tire"/>
+    <child link="front_left_disk"/>
+  </joint>
+
+  <!-- JOINT: front_right_tire -->
+  <joint name="front_right_tire_joint" type="continuous">
+    <origin xyz="0 -0.014 0.002" rpy="1.570796 0 0"/>
+    <parent link="right_steer"/>
+    <child link="front_right_tire"/>
+    <axis xyz="0 1 0" rpy="0 0 0"/>
+    <limit effort="10000" velocity="1000"/>
+    <dynamics damping="1.0" friction="1.0"/>
+  </joint>
+
+  <!-- JOINT: front_right_disk -->
+  <joint name="front_right_disk_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="front_right_tire"/>
+    <child link="front_right_disk"/>
   </joint>
 </robot>

@@ -3,7 +3,11 @@
 /home/ha/Desktop/ADS-Perception/piracer_ws/install/digital_twin/share/digital_twin/description/piracer.xacro
 /home/ha/Desktop/ADS-Perception/piracer_ws/install/digital_twin/share/digital_twin/meshes/board.stl
 /home/ha/Desktop/ADS-Perception/piracer_ws/install/digital_twin/share/digital_twin/meshes/chassis.stl
+/home/ha/Desktop/ADS-Perception/piracer_ws/install/digital_twin/share/digital_twin/meshes/cover.stl
+/home/ha/Desktop/ADS-Perception/piracer_ws/install/digital_twin/share/digital_twin/meshes/disk.stl
+/home/ha/Desktop/ADS-Perception/piracer_ws/install/digital_twin/share/digital_twin/meshes/motor.stl
 /home/ha/Desktop/ADS-Perception/piracer_ws/install/digital_twin/share/digital_twin/meshes/rpi.stl
+/home/ha/Desktop/ADS-Perception/piracer_ws/install/digital_twin/share/digital_twin/meshes/tire.stl
 /home/ha/Desktop/ADS-Perception/piracer_ws/install/digital_twin/share/ament_index/resource_index/package_run_dependencies/digital_twin
 /home/ha/Desktop/ADS-Perception/piracer_ws/install/digital_twin/share/ament_index/resource_index/parent_prefix_path/digital_twin
 /home/ha/Desktop/ADS-Perception/piracer_ws/install/digital_twin/share/digital_twin/environment/ament_prefix_path.sh
