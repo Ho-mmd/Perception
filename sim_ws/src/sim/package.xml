@@ -14,6 +14,6 @@
 
   <export>
     <build_type>ament_cmake</build_type>
-    <gazebo_ros gazebo_model_path = "/home/ha/Desktop/ADS-Perception/piracer_ws/install/digital_twin/share/"/>
+    <gazebo_ros gazebo_model_path = "/home/ha/Desktop/ADS-Perception/sim_ws/install/sim/share/"/>
   </export>
 </package>

@@ -300,7 +300,7 @@
     <collision name="front_left_tire_collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh scale="0.001 0.001 0.001" filename="package://sim/meshes/tire.stl"/>
+        <cylinder length="0.026" radius="0.034"/>
       </geometry>
     </collision>
 
@@ -344,7 +344,7 @@
     <collision name="front_right_tire_collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh scale="0.001 0.001 0.001" filename="package://sim/meshes/tire.stl"/>
+        <cylinder length="0.026" radius="0.034"/>
       </geometry>
     </collision>
 
@@ -371,6 +371,25 @@
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <mesh scale="0.001 0.001 0.001" filename="package://sim/meshes/disk.stl"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- LINK: camera -->
+  <link name='camera'>
+    <pose>0 0 0 0 0 0</pose>
+
+    <collision name='camera_collision'>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <geometry>
+        <box size=".001 .001 .001"/>
+      </geometry>
+    </collision>
+
+    <visual name='camera_visual'>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <geometry>
+        <box size=".001 .001 .001"/>
       </geometry>
     </visual>
   </link>
@@ -600,6 +619,13 @@
     <child link="front_right_disk"/>
   </joint>
 
+  <!-- JOINT: camera -->
+  <joint name="camera_joint" type="fixed">
+    <origin xyz="0.180 0 0.120" rpy="0 0 0"/>
+    <parent link="chassis"/>
+    <child link="camera"/>
+  </joint>
+
   <!-- PLUGIN: drive -->
   <gazebo>
     <plugin name="ackermann_drive_controller" filename="libgazebo_ros_ackermann_drive.so">
@@ -641,7 +667,7 @@
   </gazebo>
 
   <!-- camera -->
-  <!-- <gazebo reference="camera">
+  <gazebo reference="camera">
     <sensor type="camera" name="camera_sensor">
       <update_rate>30.0</update_rate>
       <always_on>1</always_on>
@@ -677,5 +703,5 @@
         <hack_baseline>0.07</hack_baseline>
       </plugin>
     </sensor>
-  </gazebo> -->
+  </gazebo>
 </robot>
