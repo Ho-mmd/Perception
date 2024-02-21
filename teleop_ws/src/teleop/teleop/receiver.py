@@ -16,7 +16,7 @@ class TeleopSubscriber(Node):
 
 
     def callback(self, control_msg):
-        self.piracer.set_steering_percent(control_msg.angular.z * -1.0)
+        self.piracer.set_steering_percent(control_msg.angular.z * 0.8)
         self.piracer.set_throttle_percent(control_msg.linear.x * 0.5)
         # self.get_logger().info('')
 
