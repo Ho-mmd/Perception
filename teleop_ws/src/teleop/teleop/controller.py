@@ -1,7 +1,7 @@
 import rclpy
 from rclpy.node import Node
 
-from example_interfaces.msg import Int8
+from geometry_msgs.msg import Twist
 
 import pygame
 
@@ -9,55 +9,53 @@ import pygame
 class TeleopPublisher(Node):
     def __init__(self):
         super().__init__('controller_node')
-        self.publisher_1 = self.create_publisher(Int8, 'steering_data', 10)
-        self.publisher_2 = self.create_publisher(Int8, 'throttle_data', 10)
+        self.publisher_ = self.create_publisher(Twist, '/piracer/cmd_vel', 10)
         self.timer_ = self.create_timer(0.1, self.callback)  # [s]
 
-        self.steering_msg = Int8()
-        self.throttle_msg = Int8()
+        self.control_msg = Twist()
 
-        self.steering_msg.data = 0
-        self.throttle_msg.data = 0
+        self.control_msg.linear.x = 0.0
+        self.control_msg.linear.y = 0.0
+        self.control_msg.linear.z = 0.0
+        self.control_msg.angular.x = 0.0
+        self.control_msg.angular.y = 0.0
+        self.control_msg.angular.z = 0.0
 
-        self.publisher_1.publish(self.steering_msg)
-        self.publisher_2.publish(self.throttle_msg)
+        self.publisher_.publish(self.control_msg)
 
         self.w = False
         self.a = False
         self.s = False
         self.d = False
 
-        self.pre_steering_data = None
-        self.pre_throttle_data = None
+        self.pre_steering = None
+        self.pre_throttle = None
 
 
     def callback(self):
         if self.a and self.d:
-            self.steering_msg.data = 0
+            self.control_msg.angular.z = 0.0
         elif self.a:
-            self.steering_msg.data = -1
+            self.control_msg.angular.z = 1.0
         elif self.d:
-            self.steering_msg.data = 1
+            self.control_msg.angular.z = -1.0
         else:
-            self.steering_msg.data = 0
+            self.control_msg.angular.z = 0.0
 
         if self.w and self.s:
-            self.throttle_msg.data = 0
+            self.control_msg.linear.x = 0.0
         elif self.w:
-            self.throttle_msg.data = 1
+            self.control_msg.linear.x = 1.0
         elif self.s:
-            self.throttle_msg.data = -1
+            self.control_msg.linear.x = -1.0
         else:
-            self.throttle_msg.data = 0
+            self.control_msg.linear.x = 0.0
 
-        if self.pre_steering_data is None or self.pre_steering_data != self.steering_msg.data:
-            self.pre_steering_data = self.steering_msg.data
-            self.publisher_1.publish(self.steering_msg)
-            # self.get_logger().info('')
-
-        if self.pre_throttle_data is None or self.pre_throttle_data != self.throttle_msg.data:
-            self.pre_throttle_data = self.throttle_msg.data
-            self.publisher_2.publish(self.throttle_msg)
+        if (self.pre_steering is None or self.pre_steering != self.control_msg.angular.z) or \
+            (self.pre_throttle is None or self.pre_throttle != self.control_msg.linear.x):
+            self.pre_steering = self.control_msg.angular.z
+            self.pre_throttle = self.control_msg.linear.x
+            self.publisher_.publish(self.control_msg)
             # self.get_logger().info('')
 
 
