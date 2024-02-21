@@ -17,14 +17,14 @@
     <collision name="chassis_collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/chassis.stl"/>
+        <mesh scale="0.001 0.001 0.001" filename="package://sim/meshes/chassis.stl"/>
       </geometry>
     </collision>
 
     <visual name="chassis_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/chassis.stl"/>
+        <mesh scale="0.001 0.001 0.001" filename="package://sim/meshes/chassis.stl"/>
       </geometry>
     </visual>
   </link>
@@ -111,14 +111,14 @@
     <collision name="board_collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/board.stl"/>
+        <mesh scale="0.001 0.001 0.001" filename="package://sim/meshes/board.stl"/>
       </geometry>
     </collision>
 
     <visual name="board_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/board.stl"/>
+        <mesh scale="0.001 0.001 0.001" filename="package://sim/meshes/board.stl"/>
       </geometry>
     </visual>
   </link>
@@ -130,14 +130,14 @@
     <collision name="rpi_collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/rpi.stl"/>
+        <mesh scale="0.001 0.001 0.001" filename="package://sim/meshes/rpi.stl"/>
       </geometry>
     </collision>
 
     <visual name="rpi_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/rpi.stl"/>
+        <mesh scale="0.001 0.001 0.001" filename="package://sim/meshes/rpi.stl"/>
       </geometry>
     </visual>
   </link>
@@ -149,14 +149,14 @@
     <collision name="motor1_collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/motor.stl"/>
+        <mesh scale="0.001 0.001 0.001" filename="package://sim/meshes/motor.stl"/>
       </geometry>
     </collision>
 
     <visual name="motor1_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/motor.stl"/>
+        <mesh scale="0.001 0.001 0.001" filename="package://sim/meshes/motor.stl"/>
       </geometry>
     </visual>
   </link>
@@ -168,14 +168,14 @@
     <collision name="motor2_collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/motor.stl"/>
+        <mesh scale="0.001 0.001 0.001" filename="package://sim/meshes/motor.stl"/>
       </geometry>
     </collision>
 
     <visual name="motor2_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/motor.stl"/>
+        <mesh scale="0.001 0.001 0.001" filename="package://sim/meshes/motor.stl"/>
       </geometry>
     </visual>
   </link>
@@ -187,14 +187,14 @@
     <collision name="cover_collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/cover.stl"/>
+        <mesh scale="0.001 0.001 0.001" filename="package://sim/meshes/cover.stl"/>
       </geometry>
     </collision>
 
     <visual name="cover_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/cover.stl"/>
+        <mesh scale="0.001 0.001 0.001" filename="package://sim/meshes/cover.stl"/>
       </geometry>
     </visual>
   </link>
@@ -219,7 +219,7 @@
     <visual name="rear_left_tire_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/tire.stl"/>
+        <mesh scale="0.001 0.001 0.001" filename="package://sim/meshes/tire.stl"/>
       </geometry>
     </visual>
   </link>
@@ -231,14 +231,14 @@
     <collision name="rear_left_disk_collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/disk.stl"/>
+        <mesh scale="0.001 0.001 0.001" filename="package://sim/meshes/disk.stl"/>
       </geometry>
     </collision>
 
     <visual name="rear_left_disk_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/disk.stl"/>
+        <mesh scale="0.001 0.001 0.001" filename="package://sim/meshes/disk.stl"/>
       </geometry>
     </visual>
   </link>
@@ -263,7 +263,7 @@
     <visual name="rear_right_tire_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/tire.stl"/>
+        <mesh scale="0.001 0.001 0.001" filename="package://sim/meshes/tire.stl"/>
       </geometry>
     </visual>
   </link>
@@ -275,14 +275,14 @@
     <collision name="rear_right_disk_collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/disk.stl"/>
+        <mesh scale="0.001 0.001 0.001" filename="package://sim/meshes/disk.stl"/>
       </geometry>
     </collision>
 
     <visual name="rear_right_disk_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/disk.stl"/>
+        <mesh scale="0.001 0.001 0.001" filename="package://sim/meshes/disk.stl"/>
       </geometry>
     </visual>
   </link>
@@ -300,14 +300,14 @@
     <collision name="front_left_tire_collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/tire.stl"/>
+        <mesh scale="0.001 0.001 0.001" filename="package://sim/meshes/tire.stl"/>
       </geometry>
     </collision>
 
     <visual name="front_left_tire_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/tire.stl"/>
+        <mesh scale="0.001 0.001 0.001" filename="package://sim/meshes/tire.stl"/>
       </geometry>
     </visual>
   </link>
@@ -319,14 +319,14 @@
     <collision name="front_left_disk_collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/disk.stl"/>
+        <mesh scale="0.001 0.001 0.001" filename="package://sim/meshes/disk.stl"/>
       </geometry>
     </collision>
 
     <visual name="front_left_disk_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/disk.stl"/>
+        <mesh scale="0.001 0.001 0.001" filename="package://sim/meshes/disk.stl"/>
       </geometry>
     </visual>
   </link>
@@ -344,14 +344,14 @@
     <collision name="front_right_tire_collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/tire.stl"/>
+        <mesh scale="0.001 0.001 0.001" filename="package://sim/meshes/tire.stl"/>
       </geometry>
     </collision>
 
     <visual name="front_right_tire_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/tire.stl"/>
+        <mesh scale="0.001 0.001 0.001" filename="package://sim/meshes/tire.stl"/>
       </geometry>
     </visual>
   </link>
@@ -363,14 +363,14 @@
     <collision name="front_right_disk_collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/disk.stl"/>
+        <mesh scale="0.001 0.001 0.001" filename="package://sim/meshes/disk.stl"/>
       </geometry>
     </collision>
 
     <visual name="front_right_disk_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh scale="0.001 0.001 0.001" filename="package://digital_twin/meshes/disk.stl"/>
+        <mesh scale="0.001 0.001 0.001" filename="package://sim/meshes/disk.stl"/>
       </geometry>
     </visual>
   </link>
