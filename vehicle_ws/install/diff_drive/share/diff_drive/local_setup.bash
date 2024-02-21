@@ -1,1 +1,0 @@
-/home/ha/Desktop/ADS-Perception/vehicle_ws/build/diff_drive/ament_cmake_environment_hooks/local_setup.bash

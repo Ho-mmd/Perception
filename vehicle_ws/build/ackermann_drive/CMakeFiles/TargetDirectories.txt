@@ -1,9 +1,0 @@
-/home/ha/Desktop/ADS-Perception/vehicle_ws/build/ackermann_drive/CMakeFiles/install/strip.dir
-/home/ha/Desktop/ADS-Perception/vehicle_ws/build/ackermann_drive/CMakeFiles/install/local.dir
-/home/ha/Desktop/ADS-Perception/vehicle_ws/build/ackermann_drive/CMakeFiles/install.dir
-/home/ha/Desktop/ADS-Perception/vehicle_ws/build/ackermann_drive/CMakeFiles/list_install_components.dir
-/home/ha/Desktop/ADS-Perception/vehicle_ws/build/ackermann_drive/CMakeFiles/rebuild_cache.dir
-/home/ha/Desktop/ADS-Perception/vehicle_ws/build/ackermann_drive/CMakeFiles/edit_cache.dir
-/home/ha/Desktop/ADS-Perception/vehicle_ws/build/ackermann_drive/CMakeFiles/test.dir
-/home/ha/Desktop/ADS-Perception/vehicle_ws/build/ackermann_drive/CMakeFiles/ackermann_drive_uninstall.dir
-/home/ha/Desktop/ADS-Perception/vehicle_ws/build/ackermann_drive/CMakeFiles/uninstall.dir
