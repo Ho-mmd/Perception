@@ -62,15 +62,6 @@ if __name__ == '__main__':
 
 
 
-
-
-
-
-
-
-
-
-
 import cv2
 import torch
 import  numpy as np
