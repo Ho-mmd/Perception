@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = 'camera'
+package_name = 'camera_pub'
 
 setup(
     name=package_name,
@@ -20,7 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'camera = camera.camera:main'
+            'camera_pub = camera_pub.camera_pub:main'
         ],
     },
 )
