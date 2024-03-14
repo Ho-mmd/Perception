@@ -31,6 +31,7 @@ sudo ufw disable
 # enable controller using ssh connection
 ssh <?>@<?> -Y
 ssh team5@192.168.1.150
+ssh team5@192.168.0.110
 pw = ' '
 
 # run slam toolbox
