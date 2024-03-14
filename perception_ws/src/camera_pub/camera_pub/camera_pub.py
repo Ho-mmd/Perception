@@ -32,6 +32,7 @@ class CameraPublisher(Node):
             return
 
         color_image = np.asanyarray(color_frame.get_data())
+        color_image = cv2.resize(color_image, (320, 240))  # Reduce image size
         self.msg = self.bridge.cv2_to_imgmsg(color_image, encoding="bgr8")
 
         self.publisher_.publish(self.msg)
