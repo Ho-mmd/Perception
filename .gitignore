@@ -4,3 +4,8 @@ log
 .vscode
 Pipfile
 labelImg/
+datasets/
+ultralytics/
+*.yaml
+yolo*
+runs/
