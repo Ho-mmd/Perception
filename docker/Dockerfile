@@ -3,8 +3,8 @@ FROM nvidia/cuda:12.2.2-base-ubuntu20.04
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt update && apt upgrade -y \
- && apt install -y curl gnupg gnupg1 gnupg2 locales python3-pip \
- && pip3 install cmake --upgrade \ 
+ && apt install -y curl gnupg gnupg1 gnupg2 locales python3-pip \ 
+ && pip3 install ultralytics \
  && locale-gen en_US en_US.UTF-8 \
  && update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 \
  && export LANG=en_US.UTF-8 \
