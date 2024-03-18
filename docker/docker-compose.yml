@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  perception:
+    privileged: true
+    volumes:
+      - /home/ho/coding/seame/Perception/src:/home
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    network_mode: host
+    environment:
+      - DISPLAY=${DISPLAY}
+    build:
+        context: .
+        dockerfile: ./Dockerfile
+    tty: true
+    stdin_open: true
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
