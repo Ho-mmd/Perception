@@ -10,3 +10,5 @@ ultralytics/
 yolo*
 runs/
 example/
+testImage/
+library/
