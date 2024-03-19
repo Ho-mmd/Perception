@@ -4,7 +4,7 @@
 
 ### Train Dataset
 
-- traffic light (966 images)
+- traffic light (Red, Yellow, Green 3 classes - 966 images)
 	- https://www.kaggle.com/datasets/wjybuqi/traffic-light-detection-dataset
 	
 - rotary (877 images), crosswalk (1335 images)
