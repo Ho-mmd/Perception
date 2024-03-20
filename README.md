@@ -4,7 +4,7 @@
 
 ### Train Dataset
 
-- traffic light (966 images)
+- traffic light (Red/Yellow/Green 966 images)
 	- https://www.kaggle.com/datasets/wjybuqi/traffic-light-detection-dataset
 	
 - rotary (877 images), crosswalk (1335 images)
@@ -17,4 +17,14 @@
 ### Labeling
 
 - Tools 
-	- https://github.com/HumanSignal/labelImg
+    - https://github.com/HumanSignal/labelImg
+
+------------------------------------
+
+### Model
+
+- Yolov8
+    - https://docs.ultralytics.com/ko
+	- https://github.com/ultralytics/ultralytics
+
+------------------------------------
