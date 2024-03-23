@@ -13,13 +13,15 @@ class cameraSubscriber(Node):
         self.sign_detect = sign_detect;
         self.subscription = self.create_subscription(    
                 Image,    
-                'camera_data',    
+                '/piracer/camera_sensor/image_raw',    
                 self.listener_callback,    
                 10);    
         self.subscription;    
+        self.get_logger().info("Subscribe Start");
         self.bridge = CvBridge();    
     
     def listener_callback(self, msg):
+        self.get_logger().info('Received');
         cv_image = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8');
         
         sign_id, score = self.sign_detect.detectSign(cv_image);
@@ -52,10 +54,14 @@ class signDetection:
         self.publisher = publisher;
 
     def detectSign(self, cv_image):
-        sign_id = self.model.names[int(self.model(cv_image)[0].boxes.cls)];
-        score = 0.7;
-
-        return sign_id, score;
+        detections = self.model(cv_image);
+        
+        for result in detections:
+            if len(result) > 0:
+                sign_id = self.model.names[int(result[0].boxes.cls)];
+                score = 0.7;
+                return sign_id, score;
+            return "none", 0.0;
 
     def pub_sign(self, sign_id, score):
         self.publisher.sign_info(sign_id, score);
