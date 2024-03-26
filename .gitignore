@@ -13,3 +13,6 @@ example/
 *.jpg
 *.png
 library/
+*rosbag
+labels/
+images/
