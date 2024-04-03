@@ -4,13 +4,13 @@
 
 ### Train Dataset
 
-- traffic light (Red/Yellow/Green 966 images)
-	- https://www.kaggle.com/datasets/wjybuqi/traffic-light-detection-dataset
-	
-- rotary (877 images), crosswalk (1335 images)
-	- https://www.kaggle.com/datasets/ahemateja19bec1025/traffic-sign-dataset-classification
-	- https://www.kaggle.com/datasets/saraparsaseresht/persian-traffic-sign-dataset-ptsd
-	- https://www.kaggle.com/datasets/daniildeltsov/traffic-signs-gtsrb-plus-162-custom-classes
+- Gazebo
+	- traffic light
+		- Red (546 images)
+		- Yellow (451 images)
+		- Green (599 images)
+	- rotary (890 images)
+	- crosswalk (926 images)
 	
 ------------------------------------
 
