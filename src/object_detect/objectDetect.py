@@ -95,6 +95,9 @@ class signDetect:
         if(dist != -1):
             print(sign_id, dist);
             self.signPublish.pub_sign(sign_id, dist);
+        else:   
+            sign_id = "None";
+            self.signPublish.pub_sign(sign_id, dist);
 
 class signPublish(Node):
     def __init__(self):
