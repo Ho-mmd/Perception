@@ -77,7 +77,8 @@ class signDetect:
         depth_image = depthQue.pop(0);
 
         sign_id = "";
-        dist = -1;
+        dist = -1.0;
+        conf = 0.0;
 
         while(len(self.resultQue) > 0):
             tmp = self.resultQue.pop(0);
@@ -88,11 +89,12 @@ class signDetect:
                 x = int((box[0][0] + box[0][2]) / 2);
                 y = int((box[0][1] + box[0][3]) / 2);
                 
-                if(dist == -1 or depth_image[y, x].item() < dist):
+                if(dist == -1.0 or depth_image[y, x].item() < dist):
+                    conf = tp.boxes.conf;
                     dist = depth_image[y, x].item();
                     sign_id = self.model.names[int(tp.boxes.cls)];
         
-        if(dist != -1):
+        if(dist != -1.0 and conf >= 0.8):
             print(sign_id, dist);
             self.signPublish.pub_sign(sign_id, dist);
         else:   
@@ -111,7 +113,7 @@ class signPublish(Node):
 
         classify = ObjectHypothesis();
         classify.id = sign_id;
-        classify.score = score;
+        classify.score = score * 100;
 
         msg.results.append(classify);
 
