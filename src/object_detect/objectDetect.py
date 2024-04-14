@@ -7,6 +7,7 @@ from vision_msgs.msg import Classification2D, ObjectHypothesis
 import cv2
 from cv_bridge import CvBridge
 from ultralytics import YOLO
+import numpy as np
 
 depthQue = [];
 rgbQue = [];
@@ -40,13 +41,11 @@ class cameraSubscribe(Node):
         
     def depthback(self, msg):
         self.get_logger().info(f'Depth Image Received');
-
-        depth_image = self.bridge.imgmsg_to_cv2(msg, "32FC1");
+        depth_image = self.bridge.imgmsg_to_cv2(msg, "32FC1"); 
         depthQue.append(depth_image);
 
     def rgbback(self, msg):
         self.get_logger().info(f'Rgb Image Received');
-
         rgb_image = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8');
         rgbQue.append(rgb_image);
 
@@ -54,8 +53,9 @@ class cameraSubscribe(Node):
             self.signDetect.signInfo(rgbQue);
 
 class signDetect:
-    def __init__(self, model_path, signPublish):
+    def __init__(self, model_path, signPublish, visualization):
         self.signPublish = signPublish;
+        self.visualization = visualization;
         self.model = YOLO(model_path);
         self.resultQue = [];
 
@@ -66,6 +66,8 @@ class signDetect:
         for result in results:
             if len(result) > 0:
                 self.resultQue.append(result);
+                annotated_img = result.plot(); 
+                self.visualization.pub_visual(annotated_img);
             else:
                 pass;
 
@@ -119,13 +121,23 @@ class signPublish(Node):
 
         self.publisher_.publish(msg);
 
+class visualization(Node):
+    def __init__(self):
+        super().__init__("visual_pub_node");
+        self.publisher_ = self.create_publisher(Image, "/perception/visual", 10);
+        self.bridge = CvBridge();
+        
+    def pub_visual(self, image):
+    	self.publisher_.publish(self.bridge.cv2_to_imgmsg(np.array(image), "bgr8"));
+
 def main(args=None):
     rclpy.init(args=args);
 
-    model_path = "/home/object_detect/models/bestn.pt";
+    model_path = "./models/bestn.pt";
 
     sign_pub = signPublish();
-    sign_detect = signDetect(model_path, sign_pub);
+    visual = visualization();
+    sign_detect = signDetect(model_path, sign_pub, visual);
     node = cameraSubscribe(sign_detect);
 
     executor = MultiThreadedExecutor();
