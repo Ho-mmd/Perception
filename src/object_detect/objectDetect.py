@@ -1,9 +1,9 @@
 import rclpy
 from rclpy.executors import MultiThreadedExecutor
 from rclpy.node import Node
-from rclpy.callback_groups import ReentrantCallbackGroup
 from sensor_msgs.msg import Image
 from vision_msgs.msg import Classification2D, ObjectHypothesis
+import message_filters
 import cv2
 from cv_bridge import CvBridge
 from ultralytics import YOLO
@@ -17,40 +17,24 @@ class cameraSubscribe(Node):
         super().__init__('camera_sub_node');
         self.signDetect = signDetect;
         
-        self.camera_callback_group = ReentrantCallbackGroup()
+        self.rgb_sub = message_filters.Subscriber(self, Image, '/camera/image_raw')
+        self.depth_sub = message_filters.Subscriber(self, Image, '/camera/depth/image_raw')
         
-        self.subscription1 = self.create_subscription(
-            Image,
-            '/camera/depth/image_raw',
-            self.depthback,
-            10,
-            callback_group = self.camera_callback_group
-        );
-
-        self.subscription2 = self.create_subscription(
-            Image,
-            '/camera/image_raw',
-            self.rgbback,
-            10,
-            callback_group = self.camera_callback_group
-        );
-
+        self.ts = message_filters.TimeSynchronizer([self.rgb_sub, self.depth_sub], 10)
+        self.ts.registerCallback(self.callback)
+        
         self.bridge = CvBridge();
         
-    def depthback(self, msg):
-        self.get_logger().info(f'Depth Image Received');
-        depth_image = self.bridge.imgmsg_to_cv2(msg, "32FC1"); 
-        depthQue.append(depth_image);
-        print("dep : ", len(depthQue));
-
-    def rgbback(self, msg):
-        self.get_logger().info(f'Rgb Image Received');
-        rgb_image = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8');
+    def callback(self, rgb_msg, depth_msg):
+        self.get_logger().info(f'Image Received');
+        
+        rgb_image = self.bridge.imgmsg_to_cv2(rgb_msg, desired_encoding='bgr8');
+        depth_image = self.bridge.imgmsg_to_cv2(depth_msg, "32FC1"); 
+        
         rgbQue.append(rgb_image);
-        print("rgb : ", len(rgbQue));
+        depthQue.append(depth_image);
 
-        if(len(rgbQue) > 0):
-            self.signDetect.signInfo(rgbQue);
+        self.signDetect.signInfo(rgbQue);
 
 class signDetect:
     def __init__(self, model_path, signPublish, visualization):
@@ -71,8 +55,7 @@ class signDetect:
             else:
                 pass;
 
-        if(len(depthQue) > 0): 
-            self.depthInfo(depthQue);
+        self.depthInfo(depthQue);
 
 
     def depthInfo(self, depthQue):
