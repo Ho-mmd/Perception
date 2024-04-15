@@ -1,7 +1,7 @@
 import rclpy
 from rclpy.executors import MultiThreadedExecutor
 from rclpy.node import Node
-from rclpy.callback_groups import MutuallyExclusiveCallbackGroup
+from rclpy.callback_groups import ReentrantCallbackGroup
 from sensor_msgs.msg import Image
 from vision_msgs.msg import Classification2D, ObjectHypothesis
 import cv2
@@ -16,17 +16,15 @@ class cameraSubscribe(Node):
     def __init__(self, signDetect):
         super().__init__('camera_sub_node');
         self.signDetect = signDetect;
-        self.depth = MutuallyExclusiveCallbackGroup();
-        self.rgb = MutuallyExclusiveCallbackGroup();
-        self.depthQue = [];
-        self.rgbQue = [];
-
+        
+        self.camera_callback_group = ReentrantCallbackGroup()
+        
         self.subscription1 = self.create_subscription(
             Image,
             '/camera/depth/image_raw',
             self.depthback,
             10,
-            callback_group=self.depth
+            callback_group = self.camera_callback_group
         );
 
         self.subscription2 = self.create_subscription(
@@ -34,7 +32,7 @@ class cameraSubscribe(Node):
             '/camera/image_raw',
             self.rgbback,
             10,
-            callback_group=self.rgb
+            callback_group = self.camera_callback_group
         );
 
         self.bridge = CvBridge();
@@ -43,11 +41,13 @@ class cameraSubscribe(Node):
         self.get_logger().info(f'Depth Image Received');
         depth_image = self.bridge.imgmsg_to_cv2(msg, "32FC1"); 
         depthQue.append(depth_image);
+        print("dep : ", len(depthQue));
 
     def rgbback(self, msg):
         self.get_logger().info(f'Rgb Image Received');
         rgb_image = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8');
         rgbQue.append(rgb_image);
+        print("rgb : ", len(rgbQue));
 
         if(len(rgbQue) > 0):
             self.signDetect.signInfo(rgbQue);
