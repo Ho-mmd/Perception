@@ -13,9 +13,9 @@ services:
         dockerfile: ./Dockerfile
     tty: true
     stdin_open: true
-#    deploy:
-#      resources:
-#        reservations:
-#          devices:
-#            - driver: nvidia
-#              capabilities: [gpu]
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
