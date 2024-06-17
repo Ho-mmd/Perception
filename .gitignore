@@ -11,7 +11,6 @@ yolo*
 runs/
 example/
 *.jpg
-*.png
 library/
 *rosbag
 labels/
