@@ -1,5 +1,7 @@
 # Perception
 
+<img src=/images/Architecture_Perception.png alt="Architecture_Perception" width="100%" height="100%"/>
+
 -----------------------------------
 
 ### Train Dataset
