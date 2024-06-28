@@ -42,3 +42,14 @@ This repository is for the **Perception** part of the [Autonomous-Driving-System
 	- https://github.com/ultralytics/ultralytics
 
 ------------------------------------
+
+### Usage
+
+- /data/main.py
+	- Make raw dataset from rosbag
+
+- /object_detect/objectDetect.py
+	- Detect object in Gazebo simulation   	
+
+- /object_detect/real.py
+	- Detect object in real world
